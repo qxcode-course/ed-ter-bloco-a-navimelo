@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_00-14-35",
+            "content": "@@ -95,219 +95,20 @@\n     \n-if d == 1%7B%0A        if f %3E h && f %3C p %7C%7C f %3C h && f %3C p%7B%0A            fmt.Println(%22S%22)%0A        %7D%0A    %7D else if d == -1%7B%0A        if if f %3E h && f %3C p %7C%7C f %3E h && f %3E p%7B%0A             fmt.Println(%22N%22)%0A        %7D%0A    %7D%0A\n+fmt.Println()\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-17_00-23-18",
+            "content": "@@ -212,32 +212,35 @@\n  -1%7B%0A        if \n+if \n f %3E h && f %3C p %7C\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-23-28",
+            "content": "@@ -103,9 +103,8 @@\n  == \n--\n 1%7B%0A \n@@ -197,32 +197,33 @@\n  %7D else if d == \n+-\n 1%7B%0A        if f \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-23-52",
+            "content": "@@ -106,33 +106,32 @@\n  -1%7B%0A        if \n-(\n f %3E h && f %3C p) \n@@ -128,22 +128,20 @@\n && f %3C p\n-)\n  %7C%7C \n-(\n f %3C h &&\n@@ -146,17 +146,16 @@\n && f %3C p\n-)\n %7B%0A      \n@@ -220,17 +220,16 @@\n      if \n-(\n f %3E h &&\n@@ -238,14 +238,12 @@\n  %3C p\n-)\n  %7C%7C \n-(\n f %3E \n@@ -252,17 +252,16 @@\n && f %3E p\n-)\n %7B%0A      \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-26-04",
+            "content": "@@ -126,17 +126,17 @@\n  h && f \n-%3E\n+%3C\n  p) %7C%7C (\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-26-42",
+            "content": "@@ -133,17 +133,8 @@\n  %3E p\n- && p %3E h\n ) %7C%7C\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-27-25",
+            "content": "@@ -147,33 +147,33 @@\n  %7C%7C (f %3C h && f \n-%3E\n+%3C\n  p)%7B%0A           \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-27-51",
+            "content": "@@ -157,25 +157,13 @@\n  && \n-(p %3C= h %7C%7C p %3C f)\n+f %3E p\n )%7B%0A \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-29-53",
+            "content": "@@ -190,33 +190,33 @@\n    fmt.Println(%22\n-N\n+S\n %22)%0A        %7D%0A   \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-30-00",
+            "content": "@@ -206,54 +206,8 @@\n N%22)%0A\n-        %7D else %7B%0A            fmt.Println(%22S%22)%0A\n     \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-17_00-30-29",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -290,25 +290,25 @@\n       if (f \n-%3C\n+%3E\n  h && f %3C p \n@@ -308,18 +308,8 @@\n  f %3C\n- p && h %3E=\n  p) \n@@ -325,25 +325,13 @@\n  && \n-(h\n+f\n  %3E\n-=\n  p\n- %7C%7C p %3E f)\n )%7B%0A \n@@ -371,59 +371,9 @@\n     \n-     %0A        %7D else %7B%0A            fmt.Println(%22S%22)\n+%7D\n %0A   \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-17_00-33-36",
+            "content": "@@ -374,32 +374,46 @@\n mt.Println(%22N%22)%0A\n+             %0A\n         %7D else %7B\n@@ -446,22 +446,13 @@\n S%22)%0A    \n-    %7D%0A    \n %7D\n+%0A\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-17_00-34-08",
+            "content": "@@ -306,23 +306,23 @@\n  && \n-p %3E f\n+f %3C p\n  && \n-p %3C= h\n+h %3E= p\n ) %7C%7C\n@@ -337,13 +337,14 @@\n && (\n-p%3C= h\n+h %3E= p\n  %7C%7C \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-17_00-35-22",
+            "content": "@@ -262,32 +262,41 @@\n    %7D%0A    %7D else \n+if d == 1\n %7B%0A        if (f \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-17_00-36-35",
+            "content": "@@ -137,17 +137,16 @@\n p && p %3E\n-=\n  h) %7C%7C (\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-17_00-37-15",
+            "content": "@@ -158,17 +158,17 @@\n h && (p \n-%3E\n+%3C\n = h %7C%7C p\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-17_00-37-29",
+            "content": "package main\n\nimport \"fmt\"\nfunc main() {\n    var h, p, f, d int\n\n    fmt.Scan(&h, &p, &f, &d)\n\n    if d == -1{\n        if (f > h && f > p && p >= h) || (f < h && (p >= h || p < f)){\n            fmt.Println(\"N\")\n        } else {\n            fmt.Println(\"S\")\n        }\n    } else {\n        if (f < h && p > f && p <= h) || (f > h && (p<= h || p > f)){\n             fmt.Println(\"N\")\n        } else {\n            fmt.Println(\"S\")\n        }\n    }\n}\n",
+            "lines": "22"
+        }
+    ]
+}

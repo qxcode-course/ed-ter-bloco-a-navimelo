@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_23-55-57",
+            "content": "@@ -143,17 +143,16 @@\n ln(a + %22\n- \n eh crian\n@@ -214,17 +214,16 @@\n ln(a + %22\n- \n eh jovem\n@@ -283,17 +283,16 @@\n ln(a + %22\n- \n eh adult\n@@ -354,17 +354,16 @@\n ln(a + %22\n- \n eh idoso\n@@ -414,17 +414,16 @@\n ln(a + %22\n- \n eh mumia\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-16_23-56-16",
+            "content": "@@ -174,17 +174,16 @@\n e if b %3E\n-=\n  12 && b\n@@ -190,16 +190,16 @@\n  %3C 18 %7B%0A\n+\n         \n@@ -244,17 +244,16 @@\n e if b %3E\n-=\n  18 && b\n@@ -315,17 +315,16 @@\n e if b %3E\n-=\n  65 && b\n@@ -365,24 +365,24 @@\n  eh idoso%22)%0A\n+\n     %7D else i\n@@ -390,9 +390,8 @@\n  b %3E\n-=\n  100\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-16_23-56-52",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a string\n\n    fmt.Scan(&a)\n\n    var b int\n\n    fmt.Scan(&b)\n\n    if b < 12 {\n        fmt.Println(a + \" eh crianca\")\n    } else if b >= 12 && b < 18 {\n        fmt.Println(a + \" eh jovem\")\n    } else if b >= 18 && b < 65 {\n        fmt.Println(a + \" eh adulto\")\n    } else if b >= 65 && b < 1000{\n        fmt.Println(a + \" eh idoso\")\n    } else if b >= 1000{\n        fmt.Println(a + \" eh mumia\")\n    }\n\n}\n",
+            "lines": "24"
+        }
+    ]
+}

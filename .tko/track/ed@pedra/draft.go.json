@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_01-22-26",
+            "content": "@@ -22,17 +22,8 @@\n fmt%22\n- %22math%22%0A%0A\n %0Afun\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-17_01-27-51",
+            "content": "@@ -17,33 +17,21 @@\n ort \n-(%0A    \n %22fmt%22 \n-%0A    \n %22math%22%0A\n-)\n %0A%0Afu\n@@ -46,13 +46,8 @@\n ) %7B%0A\n-    %0A\n     \n@@ -58,12 +58,20 @@\n Println(\n+%22qxcode%22\n )%0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-17_01-29-22",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -19,14 +19,29 @@\n t (%0A\n-%09\n+    \n %22fmt%22\n+ %0A    %22math%22\n %0A)%0A%0A\n@@ -58,99 +58,17 @@\n ) %7B%0A\n-%09var n int%0A%0A%09fmt.Scan(&n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09var a, b int%0A%09%09fmt.Scan(&a, &b)%0A%09%7D%0A%09\n+    %0A    \n fmt.\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-17_01-32-55",
+            "content": "@@ -27,16 +27,8 @@\n mt%22%0A\n-%09%22math%22%0A\n )%0A%0Af\n@@ -71,48 +71,8 @@\n n)%0A%0A\n-    vencedor := -1%0A    diferenca:= 101%0A%0A\n %09for\n@@ -131,228 +131,10 @@\n &b)%0A\n-%0A        if a %3E= 10 && b %3E= 10%7B%0A            dif:= int(math.Abs(float64(a - b)))%0A%0A            if vencedor == -1 %7C%7C dif %3C diferenca%7B%0A                diferenca = dif%0A                vencedor = i%0A            %7D%0A        %7D%0A%09%7D%0A%0A\n+%09%7D\n %0A%09fm\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-17_01-40-32",
+            "content": "@@ -399,62 +399,22 @@\n %09%7D%0A%0A\n-    if vencedor != 1%7B%0A        fmt.Print(vencedor)%0A    %7D\n+%0A%09fmt.Println()\n %0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_01-41-31",
+            "content": "@@ -414,17 +414,16 @@\n edor != \n--\n 1%7B%0A     \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-17_01-41-48",
+            "content": "@@ -438,10 +438,9 @@\n Prin\n-ln\n+t\n (ven\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-17_01-41-59",
+            "content": "@@ -434,17 +434,16 @@\n fmt.Prin\n-t\n ln(vence\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-17_01-42-08",
+            "content": "@@ -452,57 +452,8 @@\n or)%0A\n-    %7D else %7B%0A        fmt.Println(%22sem ganhador%22)%0A\n     \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-17_01-42-43",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar n int\n\n\tfmt.Scan(&n)\n\n    vencedor := -1\n    diferenca:= 101\n\n\tfor i := 0; i < n; i++ {\n\t\tvar a, b int\n\t\tfmt.Scan(&a, &b)\n\n        if a >= 10 && b >= 10{\n            dif:= int(math.Abs(float64(a - b)))\n\n            if vencedor == -1 || dif < diferenca{\n                diferenca = dif\n                vencedor = i\n            }\n        }\n\t}\n\n    if vencedor != -1{\n        fmt.Println(vencedor)\n    } else {\n        fmt.Println(\"sem ganhador\")\n    }\n}\n",
+            "lines": "35"
+        }
+    ]
+}
