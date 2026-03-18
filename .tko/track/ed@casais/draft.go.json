@@ -1,0 +1,134 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_14-12-17",
+            "content": "@@ -86,36 +86,8 @@\n %5Dint\n-%0A    var f = 0%0A    var m = 0\n %0A%0A  \n@@ -145,275 +145,8 @@\n     \n-    if a%5Bi%5D %3C 0 %7B%0A            f++%0A        %7D else%7B%0A            m++%0A        %7D%0A    %7D%0A%0A    var casais = 0%0A%0A    if f %3E m%7B%0A        casais = (f - m) / 2%0A    %7D else if f %3C m %7B%0A        casais = (m - f) / 2 %0A    %7D else%7B%0A        casais = m / 2%0A    %7D%0A    fmt.Println(casais)%0A%0A    \n+%7D\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-03-17_14-22-33",
+            "content": "@@ -131,17 +131,16 @@\n = 0; i %3C\n-=\n  n; i++ \n@@ -404,25 +404,24 @@\n m / 2%0A    %7D%0A\n-%0A\n     fmt.Prin\n@@ -432,15 +432,16 @@\n casais)%0A\n+%0A\n     %0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-26-11",
+            "content": "@@ -274,10 +274,9 @@\n s = \n--1\n+0\n %0A%0A  \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-26-33",
+            "content": "@@ -95,18 +95,17 @@\n var f = \n--1\n+0\n %0A    var\n@@ -109,18 +109,17 @@\n var m = \n--1\n+0\n %0A%0A    fo\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-26-50",
+            "content": "@@ -95,16 +95,17 @@\n var f = \n+-\n 1%0A    va\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-26-58",
+            "content": "@@ -314,19 +314,14 @@\n (f -\n- (f -\n  m) \n-)\n /\n+ \n 2%0A  \n@@ -365,16 +365,11 @@\n (m -\n-(m -\n  f)\n-)\n  / 2\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-30-19",
+            "content": "@@ -394,19 +394,8 @@\n else\n- if f == m \n %7B%0A  \n@@ -409,17 +409,17 @@\n asais = \n-f\n+m\n  / 2%0A   \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-30-44",
+            "content": "@@ -95,17 +95,16 @@\n var f = \n--\n 1%0A    va\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-31-02",
+            "content": "@@ -95,16 +95,17 @@\n var f = \n+-\n 1%0A    va\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-31-10",
+            "content": "@@ -271,17 +271,18 @@\n asais = \n-0\n+-1\n %0A%0A    if\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-32-20",
+            "content": "@@ -95,17 +95,17 @@\n var f = \n-0\n+1\n %0A    var\n@@ -109,17 +109,18 @@\n var m = \n-0\n+-1\n %0A%0A    fo\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-32-55",
+            "content": "@@ -95,18 +95,17 @@\n var f = \n--1\n+0\n %0A    var\n@@ -113,10 +113,9 @@\n m = \n--1\n+0\n %0A%0A  \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-33-06",
+            "content": "@@ -95,16 +95,17 @@\n var f = \n+-\n 1%0A    va\n@@ -110,16 +110,17 @@\n var m = \n+-\n 1%0A%0A    f\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-33-25",
+            "content": "@@ -95,17 +95,16 @@\n var f = \n--\n 1%0A    va\n@@ -109,17 +109,16 @@\n var m = \n--\n 1%0A%0A    f\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-33-55",
+            "content": "@@ -95,17 +95,18 @@\n var f = \n-0\n+-1\n %0A    var\n@@ -110,17 +110,18 @@\n var m = \n-0\n+-1\n %0A%0A    fo\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-34-17",
+            "content": "@@ -95,18 +95,17 @@\n var f = \n--1\n+0\n %0A    var\n@@ -109,18 +109,17 @@\n var m = \n--1\n+0\n %0A%0A    fo\n@@ -274,10 +274,9 @@\n s = \n--1\n+0\n %0A%0A  \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-34-34",
+            "content": "@@ -272,16 +272,17 @@\n asais = \n+-\n 1%0A%0A    i\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-34-41",
+            "content": "@@ -272,17 +272,17 @@\n asais = \n-0\n+1\n %0A%0A    if\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-34-46",
+            "content": "@@ -95,16 +95,17 @@\n var f = \n+-\n 1%0A    va\n@@ -110,16 +110,17 @@\n var m = \n+-\n 1%0A%0A    f\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-34-55",
+            "content": "@@ -270,17 +270,17 @@\n asais = \n-1\n+0\n %0A%0A    if\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-17_14-35-01",
+            "content": "@@ -131,16 +131,17 @@\n = 0; i %3C\n+=\n  n; i++ \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_12-59-01",
+            "content": "@@ -95,17 +95,17 @@\n var f = \n-0\n+1\n %0A    var\n@@ -109,17 +109,17 @@\n var m = \n-0\n+1\n %0A%0A    fo\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_12-59-26",
+            "content": "@@ -95,17 +95,17 @@\n var f = \n-1\n+0\n %0A    var\n@@ -113,9 +113,9 @@\n m = \n-1\n+0\n %0A%0A  \n@@ -269,17 +269,17 @@\n asais = \n-0\n+1\n %0A%0A    if\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_12-59-41",
+            "content": "@@ -95,17 +95,17 @@\n var f = \n-0\n+1\n %0A    var\n@@ -109,17 +109,17 @@\n var m = \n-0\n+1\n %0A%0A    fo\n@@ -303,18 +303,30 @@\n asais = \n-m \n+(f - (f - m) )\n /2%0A    %7D\n@@ -355,25 +355,36 @@\n    casais = \n-f\n+(m -(m - f))\n  / 2 %0A    %7D \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_13-01-28",
+            "content": "@@ -304,16 +304,19 @@\n sais = m\n+ /2\n %0A    %7D e\n@@ -349,16 +349,20 @@\n ais = f \n+/ 2 \n %0A    %7D e\n@@ -395,16 +395,20 @@\n sais = f\n+ / 2\n %0A    %7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_13-02-22",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    var a [50]int\n    var f = 0\n    var m = 0\n\n    for i := 0; i < n; i++ {\n        fmt.Scan(&a[i])\n        if a[i] < 0 {\n            f++\n        } else{\n            m++\n        }\n    }\n\n    var casais = 0\n\n    if f > m{\n        casais = m\n    } else if f < m {\n        casais = f \n    } else if f == m {\n        casais = f\n    }\n\n    fmt.Println(casais)\n    \n}\n",
+            "lines": "32"
+        }
+    ]
+}

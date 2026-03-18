@@ -64,3 +64,30 @@
 2026-03-17 13:48:39, MOVE, v:1, k:ed@casais, mode:BACK
 2026-03-17 13:48:58, MOVE, v:1, k:ed@casais, mode:PICK
 2026-03-17 13:48:59, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 14:06:24, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-17 14:12:17, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:12
+2026-03-17 14:22:33, EXEC, v:1, k:ed@casais, mode:FULL, rate:25, size:32
+2026-03-17 14:22:38, EXEC, v:1, k:ed@casais, mode:FULL, rate:25
+2026-03-17 14:26:11, EXEC, v:1, k:ed@casais, mode:FULL, rate:25, size:32
+2026-03-17 14:26:33, EXEC, v:1, k:ed@casais, mode:FULL, rate:25, size:32
+2026-03-17 14:26:50, EXEC, v:1, k:ed@casais, mode:FULL, rate:25, size:32
+2026-03-17 14:26:58, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:30:19, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:30:44, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:31:02, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:31:10, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:31:39, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 14:31:59, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-17 14:32:02, EXEC, v:1, k:ed@casais, mode:FULL, rate:50
+2026-03-17 14:32:20, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:32:55, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:33:07, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:33:25, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:33:55, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:34:17, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:34:34, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:34:41, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:34:46, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:32
+2026-03-17 14:34:55, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:35:01, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:32
+2026-03-17 14:35:22, MOVE, v:1, k:ed@casais, mode:BACK
