@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_14-07-24",
+            "content": "@@ -76,10 +76,140 @@\n e)%0A    %0A\n+    var jogadores %5B100%5Dint%0A%0A    for i := 0; i %3C n; i++ %7B%0A        jogadores%5Bi%5D = n - (n - 1)%0A    %7D%0A    fmt.Printf(%22%25v%22, jogadores)%0A\n %7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-24_14-08-49",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n, e int\n    fmt.Scan(&n, &e)\n    \n}\n",
+            "lines": "7"
+        }
+    ]
+}
