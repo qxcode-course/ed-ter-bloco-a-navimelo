@@ -1,0 +1,61 @@
+2026-03-31 00:11:28, MOVE, v:1, k:ed@apagando, mode:DOWN
+2026-03-31 00:11:35, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 00:38:16, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:33
+2026-03-31 00:38:58, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0
+2026-03-31 00:39:04, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0
+2026-03-31 00:39:05, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0
+2026-03-31 00:39:18, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0
+2026-03-31 00:45:08, EXEC, v:1, k:ed@apagando, mode:FULL, size:40, fail:COMP
+2026-03-31 00:45:55, EXEC, v:1, k:ed@apagando, mode:FULL, size:41, fail:COMP
+2026-03-31 00:46:19, EXEC, v:1, k:ed@apagando, mode:FULL, size:41, fail:COMP
+2026-03-31 00:46:29, EXEC, v:1, k:ed@apagando, mode:FULL, size:41, fail:COMP
+2026-03-31 00:50:43, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:41
+2026-03-31 00:51:15, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:40
+2026-03-31 00:51:49, EXEC, v:1, k:ed@apagando, mode:FULL, size:31, fail:COMP
+2026-03-31 00:51:51, EXEC, v:1, k:ed@apagando, mode:FULL, fail:COMP
+2026-03-31 00:52:05, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:30
+2026-03-31 00:54:01, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:29
+2026-03-31 00:54:34, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:29
+2026-03-31 00:55:21, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:29
+2026-03-31 00:55:35, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:29
+2026-03-31 00:56:25, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:35
+2026-03-31 00:59:20, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:28
+2026-03-31 00:59:29, EXEC, v:1, k:ed@apagando, mode:FULL, size:28, fail:COMP
+2026-03-31 00:59:43, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 01:00:06, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:28
+2026-03-31 01:05:10, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:28
+2026-03-31 01:06:14, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:30
+2026-03-31 01:06:33, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:30
+2026-03-31 01:07:01, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 01:07:03, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:31
+2026-03-31 01:07:15, EXEC, v:1, k:ed@apagando, mode:FULL, rate:75, size:31
+2026-03-31 01:09:20, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:33
+2026-03-31 01:10:02, EXEC, v:1, k:ed@apagando, mode:FULL, rate:75, size:34
+2026-03-31 01:11:11, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-31 01:13:12, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 01:13:13, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100, size:34
+2026-03-31 01:13:30, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-31 01:14:12, SELF, v:1, k:ed@apagando, self:1, rate:100, study:60, concept:1
+2026-03-31 01:14:46, MOVE, v:1, k:ed@buscas, mode:DOWN
+2026-03-31 01:15:19, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-31 01:44:20, EXEC, v:1, k:ed@buscas, mode:FULL, size:25, fail:COMP
+2026-03-31 01:44:32, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:25
+2026-03-31 01:46:17, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:26
+2026-03-31 01:46:26, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:26
+2026-03-31 01:46:41, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-31 02:00:09, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-03-31 02:00:26, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-31 02:03:33, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-31 02:03:49, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-31 02:04:08, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-31 02:04:45, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-31 02:04:46, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-31 02:05:08, EXEC, v:1, k:ed@buscas, mode:FULL, size:33, fail:COMP
+2026-03-31 02:05:38, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-31 02:11:33, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:37
+2026-03-31 02:12:11, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:36
+2026-03-31 02:17:50, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-31 02:17:52, EXEC, v:1, k:ed@buscas, mode:FULL, rate:100, size:33
+2026-03-31 02:18:00, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-03-31 02:18:47, SELF, v:1, k:ed@buscas, self:1, rate:100, study:60, concept:1, problem:1
+2026-03-31 02:19:32, MOVE, v:1, k:ed@rotacoes, mode:DOWN

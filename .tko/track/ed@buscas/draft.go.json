@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_01-44-20",
+            "content": "@@ -41,16 +41,19 @@\n %7B%0A%09var n\n+, m\n  int%0A%09fm\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-31_01-44-32",
+            "content": "@@ -45,11 +45,8 @@\n ar n\n-, m\n  int\n@@ -170,21 +170,30 @@\n fmt.\n-Scan(&m)\n+Print(entrada)%0A\n %0A    \n+//\n cons\n@@ -223,24 +223,26 @@\n g%5Dint)%0A%0A    \n+//\n for i := 0; \n@@ -245,17 +245,17 @@\n  0; i %3C \n-m\n+n\n ; i++ %7B%0A\n@@ -260,16 +260,18 @@\n %7B%0A      \n+//\n   consul\n@@ -296,37 +296,11 @@\n     \n-%7D%0A%0A    fmt.Println(consultas)\n+//%7D\n %0A%0A  \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-31_01-46-17",
+            "content": "@@ -298,16 +298,18 @@\n mt.Print\n+ln\n (consult\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-31_01-46-26",
+            "content": "@@ -258,20 +258,16 @@\n     \n-var \n consulta\n  str\n@@ -266,244 +266,31 @@\n ulta\n- string%0A        fmt.Scan(&consulta)%0A        %0A        for j := 0; j %3C n; j++ %7B%0A            if entrada%5Bj%5D == consulta %7B%0A                consultas%5Bconsulta%5D++%0A            %7D%0A        %7D%0A    %7D%0A%0A    for consulta, count := range consultas %7B%0A    \n+s%5Bentrada%5Bi%5D%5D++%0A    %7D%0A%0A\n     \n@@ -302,55 +302,25 @@\n rint\n-f(%22C\n+(c\n onsulta\n- '%25s': %25d%5Cn%22, consulta, count)\n+s)%0A\n %0A    \n-%7D\n %0A%0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-31_02-03-33",
+            "content": "@@ -517,16 +517,39 @@\n .Printf(\n+%22Consulta '%25s': %25d%5Cn%22, \n consulta\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-31_02-04-08",
+            "content": "@@ -521,19 +521,8 @@\n ntf(\n-%22%25s %25d%5Cn%22, \n cons\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-31_02-04-46",
+            "content": "@@ -522,14 +522,27 @@\n tf(%22\n+%25s \n %25d%5Cn%22,\n+ consulta,\n  cou\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-31_02-05-08",
+            "content": "@@ -465,9 +465,16 @@\n for \n-_\n+consulta\n , co\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-31_02-05-38",
+            "content": "@@ -426,154 +426,8 @@\n %5D++%0A\n-            %7D else %7B%0A                if _, exists := consultas%5Bconsulta%5D; !exists %7B%0A                    consultas%5Bconsulta%5D = 0%0A                %7D%0A\n     \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-31_02-11-33",
+            "content": "@@ -586,24 +586,33 @@\n   %7D%0A        \n+%7D%0A    %7D%0A%0A\n     for _, c\n@@ -633,32 +633,24 @@\n consultas %7B%0A\n-        \n         fmt.\n@@ -675,32 +675,8 @@\n nt)%0A\n-            %7D%0A        %7D%0A\n     \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-31_02-12-11",
+            "content": "@@ -85,22 +85,19 @@\n ake(\n-map\n %5B\n+%5D\n string\n-%5Dint\n+, n\n )%0A%0A \n@@ -136,80 +136,29 @@\n     \n-var palavra string%0A        fmt.Scan(&palavra)%0A        entrada%5Bpalavra%5D++\n+fmt.Scan(&entrada%5Bi%5D)\n %0A   \n@@ -204,19 +204,22 @@\n ake(\n+map\n %5B\n-%5D\n string\n-, m\n+%5Dint\n )%0A%0A \n@@ -238,32 +238,60 @@\n 0; i %3C m; i++ %7B%0A\n+        var consulta string%0A\n         fmt.Scan\n@@ -304,112 +304,333 @@\n ulta\n-s%5Bi%5D\n )%0A    \n-%7D%0A%0A    for i, p := range consultas %7B%0A        fmt.Print(entrada%5Bp%5D)%0A        %0A        if i %3C m-1\n+    %0A        for j := 0; j %3C n; j++ %7B%0A            if entrada%5Bj%5D == consulta %7B%0A                consultas%5Bconsulta%5D++%0A            %7D else %7B%0A                if _, exists := consultas%5Bconsulta%5D; !exists %7B%0A                    consultas%5Bconsulta%5D = 0%0A                %7D%0A            %7D%0A            for _, count := range consultas\n  %7B%0A \n@@ -636,24 +636,28 @@\n             \n+ \n+   \n fmt.Print(%22 \n@@ -657,14 +657,29 @@\n rint\n+f\n (%22\n- %22)%0A\n+%25d%5Cn%22, count)%0A    \n     \n@@ -680,24 +680,28 @@\n           %7D%0A\n+    \n     %7D%0A    fm\n@@ -702,21 +702,9 @@\n     \n-fmt.Println()\n+%7D\n %0A%0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_02-17-52",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, m int\n\tfmt.Scan(&n)\n\n\tentrada := make(map[string]int)\n\n    for i := 0; i < n; i++ {\n        var palavra string\n        fmt.Scan(&palavra)\n        entrada[palavra]++\n    }\n\n    fmt.Scan(&m)\n    consultas := make([]string, m)\n\n    for i := 0; i < m; i++ {\n        fmt.Scan(&consultas[i])\n    }\n\n    for i, p := range consultas {\n        fmt.Print(entrada[p])\n        \n        if i < m-1 {\n            fmt.Print(\" \")\n        }\n    }\n    fmt.Println()\n\n}\n",
+            "lines": "33"
+        }
+    ]
+}

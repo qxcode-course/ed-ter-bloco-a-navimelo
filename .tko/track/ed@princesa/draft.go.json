@@ -7,8 +7,28 @@
         },
         {
             "label": "2026-03-24_14-08-49",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n, e int\n    fmt.Scan(&n, &e)\n    \n}\n",
+            "content": "@@ -80,254 +80,6 @@\n    %0A\n-    fila := %5B%5Dint%7B%7D%0A%0A    for i := 0; i %3C n; i++ %7B%0A        fila = append(fila, i+1);%0A    %7D%0A%0A    espada := e -1%0A%0A    for len(fila) %3E 1 %7B%0A        fila = append(fila%5B0:espada%5D, fila%5Bespada+1:%5D...)%0A        espada = (espada + e - 1) %25 len(fila)%0A    %7D%0A%0A%0A%0A\n %7D%0A\n",
             "lines": "7"
+        },
+        {
+            "label": "2026-03-28_20-25-46",
+            "content": "@@ -215,78 +215,8 @@\n 1 %7B%0A\n-        imprimir := fila%5Bespada%5D%0A        fmt.Printf(%22%25d%3E%22, imprimir)%0A%0A\n     \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-28_20-27-29",
+            "content": "@@ -267,17 +267,16 @@\n ntf(%22%25d%3E\n- \n %22, impri\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-28_20-27-46",
+            "content": "@@ -80,12 +80,325 @@\n    %0A    \n+fila := %5B%5Dint%7B%7D%0A%0A    for i := 0; i %3C n; i++ %7B%0A        fila = append(fila, i+1);%0A    %7D%0A%0A    espada := e -1%0A%0A    for len(fila) %3E 1 %7B%0A        imprimir := fila%5Bespada%5D%0A        fmt.Printf(%22%25d%3E %22, imprimir)%0A%0A        fila = append(fila%5B0:espada%5D, fila%5Bespada+1:%5D...)%0A        espada = (espada + e - 1) %25 len(fila)%0A    %7D%0A%0A\n %0A%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-28_21-06-26",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n, e int\n    fmt.Scan(&n, &e)\n    \n    \n\n}\n",
+            "lines": "9"
         }
     ]
 }
