@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-01_14-27-05",
+            "content": "@@ -337,62 +337,8 @@\n o'%0A%09\n-var trash rune%0A%09showGrid(grid)%0A%09fmt.Scan(%22%25c%22, &trash)\n %0A%09bu\n@@ -381,13 +381,13 @@\n d, l\n++1\n , c\n--1\n )%0A%09b\n@@ -394,37 +394,37 @@\n urnTrees(grid, l\n--1\n , c\n+-1\n )%0A%09burnTrees(gri\n@@ -427,21 +427,21 @@\n (grid, l\n-+1\n , c\n++1\n )%0A%7D%0A%0Afun\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-01_14-29-32",
+            "content": "@@ -410,13 +410,13 @@\n d, l\n+-1\n , c\n-+1\n )%0A%09b\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-01_14-31-02",
+            "content": "@@ -332,11 +332,11 @@\n %5D = \n-%22o%22\n+'o'\n %0A%09va\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-01_14-31-22",
+            "content": "@@ -332,15 +332,13 @@\n %5D = \n-'o'%0A%09//\n+%22o%22%0A%09\n var \n@@ -349,18 +349,16 @@\n h rune%0A%09\n-//\n showGrid\n@@ -369,10 +369,8 @@\n d)%0A%09\n-//\n fmt.\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-01_14-32-07",
+            "content": "@@ -215,17 +215,17 @@\n d%5Bl%5D%5Bc%5D \n-=\n+!\n = value%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-07_00-51-31",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\nfunc is_value(grid [][]rune, l, c int, value rune) bool {\n\tnl := len(grid)\n\tnc := len(grid[0])\n\tif c < 0 || c >= nc || l < 0 || l >= nl {\n\t\treturn false\n\t}\n\treturn grid[l][c] == value\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tif !is_value(grid, l, c, '#') {\n\t\treturn\n\t}\n\tgrid[l][c] = 'o'\n\t//var trash rune\n\t//showGrid(grid)\n\t//fmt.Scan(\"%c\", &trash)\n\tburnTrees(grid, l, c+1)\n\tburnTrees(grid, l, c-1)\n\tburnTrees(grid, l-1, c)\n\tburnTrees(grid, l+1, c)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(grid [][]rune) {\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "52"
+        }
+    ]
+}

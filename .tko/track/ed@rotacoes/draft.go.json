@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-01_00-06-54",
+            "content": "@@ -343,17 +343,23 @@\n     nova\n-p\n+Posicao\n  := (i +\n@@ -403,17 +403,23 @@\n ado%5Bnova\n-p\n+Posicao\n %5D = veto\n@@ -434,29 +434,8 @@\n  %7D%0A%0A\n-    fmt.Println(%22%5B%22)%0A\n     \n@@ -590,11 +590,8 @@\n tln(\n-%22%5D%22\n )%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-04-01_00-13-00",
+            "content": "@@ -431,17 +431,18 @@\n mt.Print\n-f\n+ln\n (%22%5B%22)%0A  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-01_00-13-12",
+            "content": "@@ -435,17 +435,16 @@\n rintf(%22%5B\n- \n %22)%0A    f\n@@ -595,15 +595,14 @@\n rintln(%22\n- \n %5D%22)%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-01_00-13-23",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var t, r\n@@ -50,17 +50,20 @@\n , r int%0A\n-%09\n+    \n fmt.Scan\n@@ -72,17 +72,20 @@\n t, &r)%0A%0A\n-%09\n+    \n vetor :=\n@@ -100,17 +100,20 @@\n int, t)%0A\n-%09\n+    \n for i :=\n@@ -129,18 +129,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -157,21 +157,27 @@\n tor%5Bi%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n rotacao \n@@ -189,18 +189,22 @@\n n(vetor)\n-%0A%09\n+ %0A    \n if rotac\n@@ -212,18 +212,24 @@\n o %3E 0 %7B%0A\n-%09%09\n+        \n rotacao \n@@ -249,13 +249,19 @@\n or)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n resu\n@@ -293,17 +293,20 @@\n vetor))%0A\n-%09\n+    \n for i :=\n@@ -331,18 +331,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n novap :=\n@@ -375,18 +375,24 @@\n (vetor)%0A\n-%09%09\n+        \n resultad\n@@ -411,17 +411,20 @@\n etor%5Bi%5D%0A\n-%09\n+    \n %7D%0A%0A    f\n@@ -438,55 +438,17 @@\n tf(%22\n-%25v%5Cn%22, resultado)%0A    %0A%09//fmt.Printf(%22%5B %22)%0A%0A%09//\n+%5B %22)%0A    \n for \n@@ -477,20 +477,24 @@\n ltado %7B%0A\n-%09//%09\n+        \n fmt.Prin\n@@ -502,20 +502,24 @@\n (valor)%0A\n-%09//%09\n+        \n if i %3C l\n@@ -540,13 +540,20 @@\n 1 %7B%0A\n-%09//%09%09\n+            \n fmt.\n@@ -567,22 +567,28 @@\n  %22)%0A\n-%09//%09%7D%0A%09//%7D%0A%09//\n+        %7D%0A    %7D%0A    \n fmt.\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-01_00-20-17",
+            "content": "@@ -375,18 +375,17 @@\n mt.Print\n-ln\n+f\n (%22%25v%5Cn%22,\n@@ -396,16 +396,20 @@\n ultado)%0A\n+    \n %0A%09//fmt.\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-01_00-20-28",
+            "content": "@@ -375,17 +375,18 @@\n mt.Print\n-f\n+ln\n (%22%25v%5Cn%22,\n@@ -401,33 +401,8 @@\n do)%0A\n-    fmt.Println(%22 %22)%0A    \n %0A%09//\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-01_00-20-55",
+            "content": "@@ -382,14 +382,12 @@\n tf(%22\n- \n %25v%5Cn\n- \n %22, r\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-01_00-21-13",
+            "content": "@@ -362,17 +362,81 @@\n %5Bi%5D%0A%09%7D%0A%0A\n-%09\n+    fmt.Printf(%22 %25v%5Cn %22, resultado)%0A    fmt.Println(%22 %22)%0A    %0A%09//\n fmt.Prin\n@@ -446,16 +446,18 @@\n %22%5B %22)%0A%0A%09\n+//\n for i, v\n@@ -479,24 +479,26 @@\n esultado %7B%0A%09\n+//\n %09fmt.Print(v\n@@ -504,16 +504,18 @@\n valor)%0A%09\n+//\n %09if i %3C \n@@ -534,16 +534,18 @@\n o)-1 %7B%0A%09\n+//\n %09%09fmt.Pr\n@@ -558,15 +558,21 @@\n %22)%0A%09\n+//\n %09%7D%0A%09\n+//\n %7D%0A%09\n+//\n fmt.\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-01_00-21-36",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar t, r int\n\tfmt.Scan(&t, &r)\n\n\tvetor := make([]int, t)\n\tfor i := 0; i < t; i++ {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\n\trotacao := len(vetor)\n\tif rotacao > 0 {\n\t\trotacao = r % len(vetor)\n\t}\n\n\tresultado := make([]int, len(vetor))\n\tfor i := 0; i < len(vetor); i++ {\n\t\tnovap := (i + rotacao) % len(vetor)\n\t\tresultado[novap] = vetor[i]\n\t}\n\n\tfmt.Printf(\"[ \")\n\n\tfor i, valor := range resultado {\n\t\tfmt.Print(valor)\n\t\tif i < len(resultado)-1 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\tfmt.Println(\" ]\")\n}\n",
+            "lines": "34"
+        }
+    ]
+}
