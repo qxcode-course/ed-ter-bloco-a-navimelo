@@ -15,13 +15,13 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@rec
+- ed@map_set
 flags:
   inbox: all
-  panel: skills
-  show_panel: 'false'
+  panel: graph
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@quadrado
+selected: ed@fractais_png

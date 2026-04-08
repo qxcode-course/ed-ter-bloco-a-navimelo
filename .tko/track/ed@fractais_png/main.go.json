@@ -2,8 +2,218 @@
     "patches": [
         {
             "label": "2026-04-07_13-36-17",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.Left(30)              // dobra 30 graus para esquerda\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.DrawCircle(50)        // desenha um c\u00edrculo de raio 50\n\tpen.Right(60)             // gira para direita 60 graus\n\tpen.Walk(150)\n\tfor range 10 {\n\t\tpen.Up()\n\t\tpen.Walk(30) // anda sem riscar\n\t\tpen.Down()\n\n\t\tpen.DrawCircle(10) //desenha um circulo pequeno\n\n\t\tpen.Up()\n\t\tpen.Walk(-30) // volta sem riscar\n\t\tpen.Down()\n\n\t\tpen.Left(36) // gira\n\t}\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
-            "lines": "39"
+            "content": "@@ -1,98 +1,134 @@\n-package main%0A%0Aimport (%0A%09%22fmt%22%0A%09%22math/rand%22%0A)%0A%0Afunc ri(inf, sup\n+@@ -49,31 +49,32 @@%0A nc r%0A-i(%0A+andInt(m%0A in%0A-f%0A , %0A-sup%0A+max%0A \n  int) \n+%0A-\n float64\n- %7B%0A%09ret\n+%0A+int%0A  %257B%250A%2509%0A@@ -84,16 +84,14 @@%0A \n urn \n+%0A-\n float64(\n rand\n@@ -127,36 +127,85 @@\n t64(\n-rand.I\n+%0A+min + %0A rand%0A@@ -100,25 +100,18 @@%0A \n ntn(\n+%0A-\n sup-\n-inf\n+%0A+max-m%0A in%0A-f%0A \n +1)\n+%0A-\n  + inf)%0A\n %7D%0A%0Af\n@@ -200,24 +200,59 @@\n  + inf)%0A\n-%7D%0A%0Af\n+ %250A%257D%250A%250A%0A@@ -119,81 +119,98 @@%0A \n unc \n+%0A-\n arvere(p\n@@ -278,19 +278,25 @@\n 64) \n-%7B%0A%09\n+%257B%250A%2509\n if dist \n %3C 10\n@@ -295,17 +295,27 @@\n ist \n-%3C\n+%253C\n  10 \n-%7B%0A%09%09\n+%257B%250A%2509%2509\n if r\n@@ -332,75 +332,254 @@\n = 0 \n-%7B%0A%09%09%09pen.SetRGB(200, 90, 0)%0A%09%09%09pen.FillCircle(10)%0A%09%09%7D%0A%09%09return%0A%09%7D%0A%09\n+%257B%250A%2509%2509%0A+main() %257B%250A%2509pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura%250A%0A %2509pen%0A@@ -222,339 +222,499 @@%0A GB(2%0A-00%0A+55%0A , %0A-9%0A 0, 0)%0A-%250A%2509%2509%2509pen.FillCircle(10)%250A%2509%2509%257D%250A%2509%2509return%250A%2509%257D%250A%2509\n ang_\n@@ -595,18 +595,22 @@\n (10, 40)\n-%0A%09\n+%250A%2509\n ang_esq \n@@ -626,11 +626,17 @@\n  40)\n-%0A%0A%09\n+%250A%250A%2509\n pen.\n@@ -657,18 +657,22 @@\n ist / 5)\n-%0A%09\n+%250A%2509\n pen.SetR\n@@ -678,34 +678,38 @@\n RGB(170, 90, 35)\n-%0A%09\n+%250A%2509\n pen.Walk(dist)%0A%09\n@@ -706,18 +706,22 @@\n lk(dist)\n-%0A%09\n+%250A%2509\n pen.Righ\n@@ -730,18 +730,22 @@\n ang_dir)\n-%0A%09\n+%250A%2509\n arvere(p\n@@ -766,26 +766,30 @@\n 0, 85)/100))\n-%0A%09\n+%250A%2509\n pen.Left(ang\n@@ -803,18 +803,22 @@\n ang_esq)\n-%0A%09\n+%250A%2509\n arvere(p\n@@ -843,18 +843,22 @@\n 5)/100))\n-%0A%09\n+%250A%2509\n pen.Righ\n@@ -867,18 +867,22 @@\n ang_esq)\n-%0A%09\n+%250A%2509\n pen.SetR\n@@ -899,30 +899,607 @@\n , 35\n-)%0A%09pen.Walk(-dist)%0A%7D%0A%0A\n+%0A+     // muda a cor do pincel para vermelho%250A%2509pen.SetPosition(250, 500) // move o pincel para x 250, y 500%250A%2509pen.SetHeading(90)        // coloca o pincel apontando para cima%250A%2509pen.Walk(100)             // anda 100 pixels%250A%2509pen.Left(30)              // dobra 30 graus para esquerda%250A%2509pen.Walk(100)             // anda 100 pixels%250A%2509pen.DrawCircle(50)        // desenha um c%25C3%25ADrculo de raio 50%250A%2509pen.Right(60)             // gira para direita 60 graus%250A%2509pen.Walk(150)%250A%2509for range 10 %257B%250A%2509%2509pen.Up(%0A )%250A%0A+%2509%0A %2509pen%0A@@ -723,120 +723,183 @@%0A alk(%0A--dist)%250A%257D%250A%250A\n func\n@@ -1510,11 +1510,17 @@\n n() \n-%7B%0A%09\n+%257B%250A%2509\n pen \n@@ -1537,23 +1537,159 @@\n 600, 500\n-)%0A%09\n+%0A+30) // anda sem riscar%250A%2509%2509pen.Down()%250A%250A%2509%2509pen.DrawCircle(10) //desenha um circulo pequeno%250A%250A%2509%2509pen.Up(%0A )%250A%0A+%2509%0A %2509\n pen.\n+%0A-\n SetHeadi\n@@ -1694,18 +1694,22 @@\n ding(90)\n-%0A%09\n+%250A%2509\n pen.SetP\n@@ -1725,18 +1725,22 @@\n 00, 500)\n-%0A%09\n+%250A%2509\n arvere(p\n@@ -1751,78 +1751,108 @@\n 80)%0A\n-%09pen.SavePNG(%22tree.png%22)%0A%09fmt.Println(%22PNG file created successfully.%22)%0A%7D\n++Walk(-30) // volta sem riscar%250A%2509%2509pen.Down()%250A%250A%2509%2509pen.Left(36) // gira%250A%2509%257D%250A%0A %250A%2509pe\n %0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-08_13-56-19",
+            "content": "@@ -212,18 +212,18 @@\n RGB(\n-60, 80, 25\n+200, 90, 0\n )%0A%09%09\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_13-59-05",
+            "content": "@@ -208,17 +208,17 @@\n .SetRGB(\n-2\n+6\n 0, 80, 2\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_13-59-14",
+            "content": "@@ -210,17 +210,16 @@\n etRGB(20\n-0\n , 80, 25\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_13-59-25",
+            "content": "@@ -213,20 +213,22 @@\n GB(200, \n+8\n 0, \n-0\n+25\n )%0A%09%09%09pen\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_13-59-35",
+            "content": "@@ -349,18 +349,17 @@\n GB(170, \n-20\n+9\n 0, 35)%0A%09\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_13-59-56",
+            "content": "@@ -349,17 +349,18 @@\n GB(170, \n-5\n+20\n 0, 35)%0A%09\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-00-05",
+            "content": "@@ -208,16 +208,18 @@\n .SetRGB(\n+20\n 0, 0, 0)\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-01-52",
+            "content": "@@ -212,10 +212,8 @@\n RGB(\n-20\n 0, 0\n@@ -342,17 +342,18 @@\n .SetRGB(\n-8\n+17\n 0, 50, 3\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-02-42",
+            "content": "@@ -525,17 +525,18 @@\n .SetRGB(\n-2\n+17\n 0, 90, 3\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-03-22",
+            "content": "@@ -122,10 +122,8 @@\n %0A%7D%0A%0A\n-/*\n func\n@@ -559,10 +559,8 @@\n t)%0A%7D\n-*/\n %0A%0Afu\n@@ -648,10 +648,8 @@\n 0)%0A%09\n-//\n arve\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-17-52",
+            "content": "@@ -39,18 +39,16 @@\n and%22%0A)%0A%0A\n-/*\n func ri(\n@@ -117,18 +117,16 @@\n  inf)%0A%7D%0A\n-*/\n %0A/*func \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-18-23",
+            "content": "@@ -594,17 +594,17 @@\n  NewPen(\n-5\n+6\n 00, 500)\n@@ -609,33 +609,8 @@\n 0)%0A%09\n-pen.SetRGB(0, 0, 200)%0A%09//\n pen.\n@@ -645,15 +645,14 @@\n ion(\n-6\n+3\n 00, \n-10\n+5\n 00)%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-19-56",
+            "content": "@@ -23,16 +23,29 @@\n %0A%09%22fmt%22%0A\n+%09%22math/rand%22%0A\n )%0A%0A/*fun\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-08_14-20-04",
+            "content": "@@ -26,16 +26,18 @@\n fmt%22%0A)%0A%0A\n+/*\n func ri(\n@@ -106,16 +106,19 @@\n  inf)%0A%7D%0A\n+*/%0A\n /*func a\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-20-21",
+            "content": "@@ -606,24 +606,26 @@\n 0, 0, 200)%0A%09\n+//\n pen.SetHeadi\n@@ -627,16 +627,17 @@\n Heading(\n+9\n 0)%0A%09pen.\n@@ -652,29 +652,15 @@\n ion(\n-25\n+60\n 0, \n-250)%0A%09pen.Walk(\n 1\n+0\n 00)%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-08_14-20-57",
+            "content": "@@ -674,23 +674,8 @@\n 00)%0A\n-%09pen.Right(90)%0A\n %09//a\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-08_14-21-41",
+            "content": "@@ -27,21 +27,8 @@\n mt%22%0A\n-%09%22math/rand%22%0A\n )%0A%0Af\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-08_14-24-18",
+            "content": "@@ -662,158 +662,47 @@\n ion(\n-100, 100)%0A%0A%09for range 4%7B%0A%09%09pen.Walk(300)%0A%09%09pen.Right(90)%0A%09%7D%0A%09/*pen.SetHeading(0)%0A%09pen.Walk(100)%0A%09pen.Right(90)%0A%09pen.SetRGB(200, 0, 0)%0A%09pen.Walk(200)*/\n+250, 250)%0A%09pen.Walk(100)%0A%09pen.Right(90)\n %0A%09//\n@@ -717,17 +717,16 @@\n en, 80)%0A\n-%0A\n %09pen.Sav\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-08_14-27-47",
+            "content": "@@ -673,21 +673,8 @@\n 0)%0A%0A\n-%09dist := 300%0A\n %09for\n@@ -703,21 +703,8 @@\n 00)%0A\n-%09%09dist -= 10%0A\n %09%09pe\n@@ -718,17 +718,16 @@\n (90)%0A%09%7D%0A\n-%0A\n %09/*pen.S\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-08_14-29-11",
+            "content": "@@ -691,17 +691,15 @@\n for \n-dist %3E 10\n+range 4\n %7B%0A%09%09\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-08_14-29-29",
+            "content": "@@ -685,10 +685,8 @@\n  300\n-.0\n %0A%09fo\n@@ -709,20 +709,19 @@\n en.Walk(\n-dist\n+300\n )%0A%09%09dist\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-08_14-29-48",
+            "content": "@@ -727,17 +727,18 @@\n dist -= \n-3\n+10\n %0A%09%09pen.R\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-08_14-30-03",
+            "content": "@@ -749,33 +749,8 @@\n 90)%0A\n-%09%09pen.SetRGB(80, 50, 35)%0A\n %09%7D%0A%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-08_14-30-18",
+            "content": "@@ -749,60 +749,8 @@\n 90)%0A\n-%09%09%0A%09%09r := dist + 5%0A%09%09g := dist + 3%0A%09%09b := dist + 4%0A%0A\n %09%09pe\n@@ -762,15 +762,18 @@\n RGB(\n-r, g, b\n+80, 50, 35\n )%0A%09%7D\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-08_14-32-06",
+            "content": "@@ -613,24 +613,26 @@\n etRGB(0, 0, \n+20\n 0)%0A%09pen.SetH\n@@ -794,17 +794,17 @@\n  dist + \n-2\n+4\n %0A%0A%09%09pen.\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-33-07",
+            "content": "@@ -758,17 +758,17 @@\n := dist \n--\n++\n  5%0A%09%09g :\n@@ -774,17 +774,17 @@\n := dist \n--\n++\n  3%0A%09%09b :\n@@ -790,17 +790,17 @@\n := dist \n--\n++\n  2%0A%0A%09%09pe\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-33-32",
+            "content": "@@ -760,17 +760,16 @@\n  dist - \n-6\n 5%0A%09%09g :=\n@@ -776,17 +776,16 @@\n  dist - \n-4\n 3%0A%09%09b :=\n@@ -792,17 +792,16 @@\n  dist - \n-3\n 2%0A%0A%09%09pen\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-33-46",
+            "content": "@@ -747,91 +747,43 @@\n 90)%0A\n-%0A\n %09%09\n-var y int%0A%09%09for x := 0; x %3C 255; x++ %7B%0A%09%09%09y += 1%0A%09%09%7D%0A%09%09%0A%09%09r := y * 2%0A%09%09g := y * \n+%0A%09%09r := dist - 65%0A%09%09g := dist - 4\n 3%0A%09%09\n@@ -791,13 +791,17 @@\n  := \n-y - 9\n+dist - 32\n %0A%0A%09%09\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-35-36",
+            "content": "@@ -804,17 +804,17 @@\n %09%7D%0A%09%09%0A%09%09\n-a\n+r\n  := y * \n@@ -855,17 +855,17 @@\n .SetRGB(\n-a\n+r\n , g, b)%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-08_14-36-45",
+            "content": "@@ -803,47 +803,71 @@\n %09%09%7D%0A\n+%09%09\n %0A%09%09\n-pen.SetRGB((y * 2), (y * 3), (y - 9)\n+a := y * 2%0A%09%09g := y * 3%0A%09%09b := y - 9%0A%0A%09%09pen.SetRGB(a, g, b\n )%0A%09%7D\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-08_14-38-06",
+            "content": "@@ -803,71 +803,47 @@\n %09%09%7D%0A\n-%09%09\n %0A%09%09p\n- := y * 2%0A%09%09g := y * 3%0A%09%09b := y - 9%0A%0A%09%09pen.SetRGB(p, g, b\n+en.SetRGB((y * 2), (y * 3), (y - 9)\n )%0A%09%7D\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-08_14-38-17",
+            "content": "@@ -798,16 +798,58 @@\n += 1%0A%09%09%7D\n+%0A%09%09%0A%09%09p := y * 2%0A%09%09g := y * 3%0A%09%09b := y - 9\n %0A%0A%09%09pen.\n@@ -859,15 +859,15 @@\n RGB(\n-y, y, y\n+p, g, b\n )%0A%09%7D\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-08_14-39-44",
+            "content": "@@ -117,17 +117,16 @@\n  inf)%0A%7D%0A\n-%0A\n /*func a\n@@ -696,17 +696,16 @@\n ist %3E 10\n- \n %7B%0A%09%09pen.\n@@ -774,19 +774,19 @@\n  0; x %3C \n-100\n+255\n ; x++ %7B%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-08_14-40-00",
+            "content": "@@ -117,16 +117,17 @@\n  inf)%0A%7D%0A\n+%0A\n /*func a\n@@ -697,16 +697,17 @@\n ist %3E 10\n+ \n %7B%0A%09%09pen.\n@@ -749,61 +749,63 @@\n 90)%0A\n-%09%09\n %0A%09%09\n-r := dist - 65%0A%09%09g := dist - 43%0A%09%09b := dist - 32\n+var y int%0A%09%09for x := 0; x %3C 100; x++ %7B%0A%09%09%09y += 1%0A%09%09%7D\n %0A%0A%09%09\n@@ -819,15 +819,15 @@\n RGB(\n-r, g, b\n+y, y, y\n )%0A%09%7D\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-08_14-40-17",
+            "content": "@@ -781,10 +781,10 @@\n t - \n-87\n+43\n %0A%09%09b\n@@ -798,10 +798,10 @@\n t - \n-6\n 3\n+2\n %0A%0A%09%09\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-40-33",
+            "content": "@@ -758,17 +758,17 @@\n := dist \n-+\n+-\n  65%0A%09%09g \n@@ -775,17 +775,17 @@\n := dist \n-+\n+-\n  87%0A%09%09b \n@@ -792,17 +792,17 @@\n := dist \n-+\n+-\n  63%0A%0A%09%09p\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-40-48",
+            "content": "@@ -748,18 +748,16 @@\n 0)%0A%09%09%0A%09%09\n-/*\n r := dis\n@@ -819,18 +819,16 @@\n r, g, b)\n-*/\n %0A%09%7D%0A%0A%09/*\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-41-15",
+            "content": "@@ -729,10 +729,9 @@\n  -= \n-25\n+3\n %0A%09%09p\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-41-29",
+            "content": "@@ -726,17 +726,16 @@\n ist -= 2\n-.\n 5%0A%09%09pen.\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-41-51",
+            "content": "@@ -117,17 +117,16 @@\n  inf)%0A%7D%0A\n-%0A\n /*func a\n@@ -696,17 +696,16 @@\n ist %3E 10\n- \n %7B%0A%09%09pen.\n@@ -749,237 +749,10 @@\n 90)%0A\n-%0A\n %09%09\n-for i := 0; i %3C 10; i++ %7B%0A%09%09%09r := max(0, min(255, rand.Float64()*dist+ri(-10, 10)))%0A%09%09%09g := max(0, min(255, rand.Float64()*dist+ri(-10, 10)))%0A%09%09%09b := max(0, min(255, rand.Float64()*dist+ri(-10, 10)))%0A%09%09%09pen.SetRGB(r, g, b)%0A%09%09%7D\n %0A%09%09/\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-08_14-45-16",
+            "content": "@@ -727,17 +727,19 @@\n dist -= \n-3\n+2.5\n %0A%09%09pen.R\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-08_14-45-53",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\n/*func arvere(pen *Pen, dist float64) {\n\tif dist < 10 {\n\t\tif ri(0, 50) == 0 {\n\t\t\tpen.SetRGB(200, 0, 0)\n\t\t\tpen.FillCircle(10)\n\t\t}\n\t\treturn\n\t}\n\tang_dir := ri(10, 40)\n\tang_esq := ri(10, 40)\n\n\tpen.SetLineWidth(dist / 5)\n\tpen.SetRGB(80, 50, 35)\n\tpen.Walk(dist)\n\tpen.Right(ang_dir)\n\tarvere(pen, dist*(ri(80, 85)/100))\n\tpen.Left(ang_dir + ang_esq)\n\tarvere(pen, dist*(ri(80, 85)/100))\n\tpen.Right(ang_esq)\n\tpen.SetRGB(20, 90, 35)\n\tpen.Walk(-dist)\n}*/\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetRGB(0, 0, 0)\n\tpen.SetHeading(0)\n\tpen.SetPosition(100, 100)\n\n\tdist := 300.0\n\tfor dist > 10 {\n\t\tpen.Walk(dist)\n\t\tdist -= 3\n\t\tpen.Right(90)\n\n\t\tfor i := 0; i < 10; i++ {\n\t\t\tr := max(0, min(255, rand.Float64()*dist+ri(-10, 10)))\n\t\t\tg := max(0, min(255, rand.Float64()*dist+ri(-10, 10)))\n\t\t\tb := max(0, min(255, rand.Float64()*dist+ri(-10, 10)))\n\t\t\tpen.SetRGB(r, g, b)\n\t\t}\n\t\t/*r := dist + 65\n\t\tg := dist + 87\n\t\tb := dist + 63\n\n\t\tpen.SetRGB(r, g, b)*/\n\t}\n\n\t/*pen.SetHeading(0)\n\tpen.Walk(100)\n\tpen.Right(90)\n\tpen.SetRGB(200, 0, 0)\n\tpen.Walk(200)*/\n\t//arvere(pen, 80)\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "69"
         }
     ]
 }
