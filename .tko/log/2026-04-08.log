@@ -12,3 +12,23 @@
 2026-04-08 01:55:34, MOVE, v:1, k:ed@binomiais, mode:PICK
 2026-04-08 01:55:38, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100, size:15
 2026-04-08 01:55:44, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-04-08 01:57:19, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-04-08 01:57:21, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-04-08 01:57:44, SELF, v:1, k:ed@escada, self:1, rate:100, study:15
+2026-04-08 01:58:05, SELF, v:1, k:ed@binomiais, self:1, rate:100, study:10
+2026-04-08 01:58:23, MOVE, v:1, k:ed@fib1, mode:DOWN
+2026-04-08 01:58:39, MOVE, v:1, k:ed@fib1, mode:PICK
+2026-04-08 02:06:28, EXEC, v:1, k:ed@fib1, mode:FULL, rate:22, size:22
+2026-04-08 02:10:12, EXEC, v:1, k:ed@fib1, mode:FULL, rate:100, size:16
+2026-04-08 02:10:34, MOVE, v:1, k:ed@fib1, mode:BACK
+2026-04-08 02:10:47, MOVE, v:1, k:ed@fib2, mode:DOWN
+2026-04-08 02:16:42, MOVE, v:1, k:ed@fib2, mode:PICK
+2026-04-08 02:18:16, EXEC, v:1, k:ed@fib2, mode:FULL, rate:10, size:21
+2026-04-08 02:18:58, EXEC, v:1, k:ed@fib2, mode:FULL, rate:10, size:21
+2026-04-08 02:20:44, EXEC, v:1, k:ed@fib2, mode:FULL, rate:95, size:20
+2026-04-08 02:21:04, EXEC, v:1, k:ed@fib2, mode:FULL, rate:95
+2026-04-08 02:24:43, EXEC, v:1, k:ed@fib2, mode:FULL, rate:90, size:23
+2026-04-08 02:24:49, EXEC, v:1, k:ed@fib2, mode:FULL, rate:90
+2026-04-08 02:25:31, EXEC, v:1, k:ed@fib2, mode:FULL, rate:100, size:28
+2026-04-08 02:25:59, EXEC, v:1, k:ed@fib2, mode:FULL, rate:100, size:30
+2026-04-08 02:27:11, MOVE, v:1, k:ed@fib2, mode:BACK

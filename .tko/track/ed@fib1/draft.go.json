@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-08_02-06-28",
+            "content": "@@ -62,12 +62,56 @@\n  == \n-1 %7C%7C\n+0 %7B%0A%09%09return 1%0A%09%7D%0A%09if n == 1 %7B%0A%09%09return 1%0A%09%7D%0A%09if\n  n =\n@@ -159,12 +159,24 @@\n ) + \n-(m *\n+coelho(n-2, m) +\n  coe\n@@ -185,14 +185,13 @@\n o(n-\n-2\n+3\n , m)\n-)\n %0A%7D%0A%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_02-10-12",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc coelho(n, m int) int {\n\tif n == 1 || n == 2 {\n\t\treturn 1\n\t}\n\treturn coelho(n-1, m) + (m * coelho(n-2, m))\n}\n\nfunc main() {\n\tvar n, m int\n\tfmt.Scan(&n, &m)\n\tfmt.Println(coelho(n, m))\n}\n",
+            "lines": "16"
+        }
+    ]
+}
