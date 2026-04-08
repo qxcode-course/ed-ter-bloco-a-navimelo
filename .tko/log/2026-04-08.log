@@ -1,0 +1,14 @@
+2026-04-08 00:38:39, MOVE, v:1, k:ed@escada, mode:DOWN
+2026-04-08 00:38:47, MOVE, v:1, k:ed@escada, mode:PICK
+2026-04-08 00:40:31, MOVE, v:1, k:ed@escada, mode:BACK
+2026-04-08 00:40:41, MOVE, v:1, k:ed@escada, mode:PICK
+2026-04-08 00:45:28, EXEC, v:1, k:ed@escada, mode:FULL, rate:13, size:21
+2026-04-08 00:46:16, EXEC, v:1, k:ed@escada, mode:FULL, rate:13, size:18
+2026-04-08 00:46:27, EXEC, v:1, k:ed@escada, mode:FULL, rate:6, size:18
+2026-04-08 00:47:10, EXEC, v:1, k:ed@escada, mode:FULL, rate:100, size:21
+2026-04-08 00:47:22, MOVE, v:1, k:ed@escada, mode:BACK
+2026-04-08 00:47:31, MOVE, v:1, k:ed@binomiais, mode:DOWN
+2026-04-08 00:47:39, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-04-08 01:55:34, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-04-08 01:55:38, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100, size:15
+2026-04-08 01:55:44, MOVE, v:1, k:ed@binomiais, mode:BACK

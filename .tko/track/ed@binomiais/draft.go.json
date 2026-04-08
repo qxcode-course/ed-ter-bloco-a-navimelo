@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-08_01-55-38",
+            "content": "package main\nimport \"fmt\"\n\nfunc binomial(n, k int) int {\n    if k == 0 || k == n {\n        return 1\n    }\n    return binomial(n-1, k-1) + binomial(n-1, k)\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n    fmt.Println(binomial(n, k))\n}\n",
+            "lines": "15"
+        }
+    ]
+}
