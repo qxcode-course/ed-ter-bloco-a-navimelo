@@ -15,8 +15,9 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@map_set
+- ed@backtrack
+- ed@rec
 flags:
   inbox: all
   panel: graph
@@ -24,4 +25,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
+selected: ed@rec

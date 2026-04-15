@@ -9,6 +9,22 @@ func ri(inf, sup int) float64 {
 	return float64(rand.Intn(sup-inf+1) + inf)
 }
 
+func circulo(pen Pen, raio float64) {
+	if raio < 1{
+		return
+	}
+	pen.DrawCircle(raio)
+
+	for range 6{
+		pen.Up()
+		pen.Walk(raio)
+		pen.Down()
+		circulo(pen, raio*0.3)
+		pen.Walk(-raio)
+		pen.Right(60)
+	}
+}
+
 /*func arvere(pen *Pen, dist float64) {
 	if dist < 10 {
 		if ri(0, 50) == 0 {
@@ -33,12 +49,12 @@ func ri(inf, sup int) float64 {
 }*/
 
 func main() {
-	pen := NewPen(500, 500)
+	pen := NewPen(600, 600)
 	pen.SetRGB(0, 0, 0)
-	pen.SetHeading(0)
-	pen.SetPosition(100, 100)
+	pen.SetHeading(90)
+	pen.SetPosition(300, 300)
 
-	dist := 300.0
+	/*dist := 300.0
 	for dist > 10 {
 		pen.Walk(dist)
 		dist -= 3
@@ -54,8 +70,8 @@ func main() {
 		g := dist + 87
 		b := dist + 63
 
-		pen.SetRGB(r, g, b)*/
-	}
+		pen.SetRGB(r, g, b)
+	}*/
 
 	/*pen.SetHeading(0)
 	pen.Walk(100)
