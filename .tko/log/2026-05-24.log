@@ -28,3 +28,61 @@
 2026-05-24 17:34:59, EXEC, v:1, k:ed@escada, mode:FULL, rate:100
 2026-05-24 17:35:02, EXEC, v:1, k:ed@escada, mode:FULL, rate:100
 2026-05-24 17:35:04, MOVE, v:1, k:ed@escada, mode:BACK
+2026-05-24 17:36:30, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-05-24 17:54:14, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100
+2026-05-24 17:54:17, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-05-24 17:55:06, MOVE, v:1, k:ed@eh_primo, mode:PICK
+2026-05-24 18:11:49, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100
+2026-05-24 18:11:51, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100
+2026-05-24 18:11:55, MOVE, v:1, k:ed@eh_primo, mode:BACK
+2026-05-24 18:12:49, MOVE, v:1, k:ed@fib1, mode:PICK
+2026-05-24 18:25:22, EXEC, v:1, k:ed@fib1, mode:FULL, rate:100
+2026-05-24 18:25:38, MOVE, v:1, k:ed@fib1, mode:BACK
+2026-05-24 18:26:31, MOVE, v:1, k:ed@fib2, mode:PICK
+2026-05-24 18:55:22, EXEC, v:1, k:ed@fib2, mode:FULL, rate:100
+2026-05-24 18:55:24, MOVE, v:1, k:ed@fib2, mode:BACK
+2026-05-24 19:47:14, MOVE, v:1, k:ed@rotten, mode:DOWN
+2026-05-24 19:48:06, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-24 19:47:14, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 19:47:14, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 19:48:27, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 20:33:31, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-24 20:36:20, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 20:39:27, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 20:50:29, EXEC, v:1, k:ed@rotten, mode:FULL, size:23, fail:COMP
+2026-05-24 20:52:04, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-24 20:52:10, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-24 20:52:15, EXEC, v:1, k:ed@rotten, mode:FULL, fail:COMP
+2026-05-24 20:52:19, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-24 20:52:21, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-24 20:56:37, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:01:44, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:06:42, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:07:24, EXEC, v:1, k:ed@rotten, mode:FULL, size:64, fail:COMP
+2026-05-24 21:07:47, EXEC, v:1, k:ed@rotten, mode:FULL, size:64, fail:COMP
+2026-05-24 21:08:13, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:64
+2026-05-24 21:08:11, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:08:13, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:13:32, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33
+2026-05-24 21:14:14, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:65
+2026-05-24 21:16:16, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:65
+2026-05-24 21:16:16, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:16:44, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:16:46, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:65
+2026-05-24 21:21:08, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:72
+2026-05-24 21:21:08, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:21:03, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-05-24 21:24:18, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100, size:76
+2026-05-24 21:24:23, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-24 21:25:29, MOVE, v:1, k:ed@caminho, mode:DOWN
+2026-05-24 21:28:58, SELF, v:1, k:ed@rotten, self:1, rate:100, study:97, concept:1
+2026-05-24 21:29:03, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-24 21:25:29, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-05-24 21:25:29, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-05-24 21:25:29, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-05-24 21:25:29, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-05-24 21:42:51, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-05-24 22:08:05, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-24 22:08:48, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-24 22:20:29, EXEC, v:1, k:ed@caminho, mode:FULL, size:112, fail:COMP
+2026-05-24 22:21:49, MOVE, v:1, k:ed@caminho, mode:BACK

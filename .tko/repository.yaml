@@ -13,20 +13,22 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
-- ed@dfs
-- ed@map_set
-- ed@vector
+- ed@bfs
 - ed@rec
+- ed@vector
+- ed@list
+- ed@map_set
 - ed@backtrack
 - ed@tree
 - ed@linear
+- ed@dfs
+- ed@basic
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@escada
-selected_index: 22
+selected: ed@detonate
+selected_index: 98

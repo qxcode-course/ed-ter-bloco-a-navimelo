@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-24_20-50-29",
+            "content": "@@ -179,17 +179,16 @@\n fila := \n-%5B\n make(%5B%5Dp\n@@ -201,21 +201,8 @@\n , 0)\n-%5D //%5B%5Dponto%7B%7D\n %0A%09la\n@@ -227,846 +227,29 @@\n = 0%0A\n-%0A%09for i := 0; i %3C l; i++%7B%0A%09%09for j := 0; j %3C c; j++ %7B%0A%09%09%09if grid%5Bi%5D%5Bj%5D == 2 %7B%0A%09%09%09%09fila = append(fila, posicao%7Blinha: i, coluna: j%7D)%0A%09%09%09%7D else if grid%5Bi%5D%5Bj%5D == 1 %7B%0A%09%09%09%09laranjaf++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09if laranjaf == 0 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09direcao := %5B4%5D%5B2%5Dint%7B%7B-1, 0%7D, %7B1, 0%7D, %7B0, -1%7D, %7B0, 1%7D%7D%0A%0A%09for len(fila) %3E 0 && laranjaf %3E 0%7B%0A%09%09t := len(fila)%0A%09%09min++%0A%09%09for i := 0; i %3C t; i++ %7B%0A%09%09%09p := fila%5B0%5D%0A%09%09%09fila = fila%5B1:%5D%0A%0A%09%09%09for _, d := range direcao %7B%0A%09%09%09%09lin := p.linha + d%5B0%5D%0A%09%09%09%09col := p.coluna + d%5B1%5D%0A%0A%09%09%09%09if lin %3E= 0 && lin %3C l && col %3E= 0 && col %3C c && grid%5Blin%5D%5Bcol%5D == 1 %7B%0A%09%09%09%09%09grid%5Blin%5D%5Bcol%5D = 2%0A%09%09%09%09%09laranjaf--%0A%09%09%09%09%09fila = append(fila, posicao%7Blinha: lin, coluna: col%7D)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09if laranjaf == 0 %7B%0A%09%09return min%0A%09%7D%0A%09return -1%0A%7D%0A%0Afunc main() %7B%0A%09grid := %5B%5D%5B%5Dint%7B%7B2,1,1%7D,%7B1,1,0%7D,%7B0,1,1%7D%7D%0A%09resultado := lpodre(grid)%0A%09fmt.Println(resultado)\n+%7D%0A%0Afunc main() %7B%0A    %0A\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-24_21-07-24",
+            "content": "@@ -200,16 +200,27 @@\n ao, 0)%5D \n+//%5B%5Dponto%7B%7D\n %0A%09laranj\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-24_21-07-47",
+            "content": "@@ -179,16 +179,22 @@\n fila := \n+%5Bmake(\n %5B%5Dposica\n@@ -198,10 +198,14 @@\n icao\n-%7B%7D\n+, 0)%5D \n %0A%09la\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-24_21-08-13",
+            "content": "@@ -276,14 +276,10 @@\n %0A%09%09%09\n-switch\n+if\n  gri\n@@ -290,20 +290,14 @@\n %5Bj%5D \n-%7B%0A%09%09%09case 2:\n+== 2 %7B\n %0A%09%09%09\n@@ -354,15 +354,35 @@\n %0A%09%09%09\n-case 1:\n+%7D else if grid%5Bi%5D%5Bj%5D == 1 %7B\n %0A%09%09%09\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-24_21-14-14",
+            "content": "@@ -339,10 +339,25 @@\n cao%7B\n-i,\n+linha: i, coluna:\n  j%7D)\n@@ -446,23 +446,22 @@\n o := %5B4%5D\n-posicao\n+%5B2%5Dint\n %7B%7B-1, 0%7D\n@@ -665,22 +665,19 @@\n inha + d\n-.linha\n+%5B0%5D\n %0A%09%09%09%09col\n@@ -692,23 +692,19 @@\n luna + d\n-.coluna\n+%5B1%5D\n %0A%0A%09%09%09%09if\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-24_21-16-16",
+            "content": "@@ -841,17 +841,32 @@\n icao%7Blin\n-,\n+ha: lin, coluna:\n  col%7D)%0A%09\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-24_21-16-46",
+            "content": "@@ -174,129 +174,8 @@\n 0%5D)%0A\n-%0A%09copiagrid := make(%5B%5D%5B%5Dint, l)%0A%09for i := range grid %7B%0A%09%09copiagrid%5Bi%5D = make(%5B%5Dint, c)%0A%09%09copy(copiagrid%5Bi%5D, grid%5Bi%5D)%0A%09%7D%0A%0A\n %09fil\n@@ -279,21 +279,16 @@\n %09switch \n-copia\n grid%5Bi%5D%5B\n@@ -743,21 +743,16 @@\n  %3C c && \n-copia\n grid%5Blin\n@@ -774,13 +774,8 @@\n %09%09%09%09\n-copia\n grid\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-24_21-21-08",
+            "content": "@@ -170,17 +170,136 @@\n rid%5B0%5D)%0A\n-%09\n+%0A%09copiagrid := make(%5B%5D%5B%5Dint, l)%0A%09for i := range grid %7B%0A%09%09copiagrid%5Bi%5D = make(%5B%5Dint, c)%0A%09%09copy(copiagrid%5Bi%5D, grid%5Bi%5D)%0A%09%7D%0A\n %0A%09fila :\n@@ -400,16 +400,21 @@\n %09switch \n+copia\n grid%5Bi%5D%5B\n@@ -869,16 +869,21 @@\n  %3C c && \n+copia\n grid%5Blin\n@@ -901,16 +901,21 @@\n  %7B%0A%09%09%09%09%09\n+copia\n grid%5Blin\n@@ -1071,41 +1071,8 @@\n ) %7B%0A\n-%09var l, c int%0A%09fmt.Scan(&l, &c)%0A%0A\n %09gri\n@@ -1080,137 +1080,40 @@\n  := \n-make(\n %5B%5D%5B%5Dint\n-, l)%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09grid%5Bi%5D = make(%5B%5Dint, c)%0A%09%09for j := 0; j %3C c; j++ %7B%0A%09%09%09fmt.Scan(&grid%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%7D%0A\n+%7B%7B2,1,1%7D,%7B1,1,0%7D,%7B0,1,1%7D%7D\n %0A%09re\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-24_21-24-18",
+            "content": "package main\nimport \"fmt\"\n\ntype posicao struct {\n\tlinha int\n\tcoluna int\n}\n\nfunc lpodre (grid [][]int) int{\n\tif len(grid) == 0 {\n\t\treturn 0\n\t}\n\tl := len(grid)\n\tc := len(grid[0])\n\t\n\tfila := []posicao{}\n\tlaranjaf := 0\n\tmin := 0\n\n\tfor i := 0; i < l; i++{\n\t\tfor j := 0; j < c; j++ {\n\t\t\tswitch grid[i][j] {\n\t\t\tcase 2:\n\t\t\t\tfila = append(fila, posicao{i, j})\n\t\t\tcase 1:\n\t\t\t\tlaranjaf++\n\t\t\t}\n\t\t}\n\t}\n\n\tif laranjaf == 0 {\n\t\treturn 0\n\t}\n\n\tdirecao := [4]posicao{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n\n\tfor len(fila) > 0 && laranjaf > 0{\n\t\tt := len(fila)\n\t\tmin++\n\t\tfor i := 0; i < t; i++ {\n\t\t\tp := fila[0]\n\t\t\tfila = fila[1:]\n\n\t\t\tfor _, d := range direcao {\n\t\t\t\tlin := p.linha + d.linha\n\t\t\t\tcol := p.coluna + d.coluna\n\n\t\t\t\tif lin >= 0 && lin < l && col >= 0 && col < c && grid[lin][col] == 1 {\n\t\t\t\t\tgrid[lin][col] = 2\n\t\t\t\t\tlaranjaf--\n\t\t\t\t\tfila = append(fila, posicao{lin, col})\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tif laranjaf == 0 {\n\t\treturn min\n\t}\n\treturn -1\n}\n\nfunc main() {\n\tvar l, c int\n\tfmt.Scan(&l, &c)\n\n\tgrid := make([][]int, l)\n\tfor i := 0; i < l; i++ {\n\t\tgrid[i] = make([]int, c)\n\t\tfor j := 0; j < c; j++ {\n\t\t\tfmt.Scan(&grid[i][j])\n\t\t}\n\t}\n\n\tresultado := lpodre(grid)\n\tfmt.Println(resultado)\n}\n",
+            "lines": "76"
+        }
+    ]
+}
