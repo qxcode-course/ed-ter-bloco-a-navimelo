@@ -27,8 +27,53 @@
         },
         {
             "label": "2026-03-28_21-06-26",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n, e int\n    fmt.Scan(&n, &e)\n    \n    \n\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,304 +23,43 @@\n mt%22%0A\n-%0A\n func \n-print_jog(jogadores%5B%5Dint, e int)%7B%0A    fmt.Print(%22%5B%22)%0A    for i, elem := range jogadores%7B%0A        if elem != 0%7B%0A            fmt.Print(elem)%0A        %7D%0A        if i == e %7B%0A            fmt.Print(%22%3E%22)%0A        %7D%0A        fmt.Println(%22 %22)%0A    %7D%0A    fmt.Print(%22%5D%5Cn%22)%0A%7D%0A%0Afunc main() %7B%0A%09var q, e int%0A%09\n+main() %7B%0A    var n, e int%0A    \n fmt.\n@@ -68,156 +68,24 @@\n an(&\n-q\n+n\n , &e)%0A\n-%0A%09jogadores := make(%5B%5Dint, 0, q)%0A    %0A%09for i := 1; i %3C= q; i++ %7B%0A%09%09jogadores = append(jogadores, i)%0A%09%7D%0A    e -= 1%0A%0A    print_jog(jogadores, e)\n+    %0A    %0A\n %0A%7D%0A\n",
             "lines": "9"
+        },
+        {
+            "label": "2026-05-05_16-15-58",
+            "content": "@@ -76,17 +76,16 @@\n Print(%22%5B\n- \n %22)%0A    f\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-05_16-16-12",
+            "content": "@@ -45,17 +45,16 @@\n ogadores\n- \n %5B%5Dint, e\n@@ -250,16 +250,18 @@\n mt.Print\n+ln\n (%22 %22)%0A  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-05_16-17-31",
+            "content": "@@ -37,16 +37,24 @@\n nt_jog(j\n+ogadores\n  %5B%5Dint, \n@@ -107,16 +107,24 @@\n  range j\n+ogadores\n %7B%0A      \n@@ -291,190 +291,8 @@\n %0A%7D%0A%0A\n-func procurar_vivo(j %5B%5Dint, e int) int%7B%0A    for %7B%0A        e += 1%0A        if e == len(j)%7B%0A            e == 0%0A        %7D%0A        if j %5Be%5D != 0 %7B%0A            return e%0A        %7D%0A    %7D%0A%7D%0A%0A\n func\n@@ -336,16 +336,24 @@\n  &e)%0A%0A%09j\n+ogadores\n  := make\n@@ -401,16 +401,24 @@\n ++ %7B%0A%09%09j\n+ogadores\n  = appen\n@@ -420,16 +420,24 @@\n append(j\n+ogadores\n , i)%0A%09%7D%0A\n@@ -451,157 +451,35 @@\n = 1%0A\n-    for range e - 1%7B%0A        print_jog(j, e)%0A        vai_morrer := procurar_vivo(j, e)%0A        j%5Bvai_morrer%5D = 0%0A        e = procurar_vivo(j, e)%0A    %7D\n+%0A    print_jog(jogadores, e)\n %0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-05_16-22-39",
+            "content": "@@ -375,16 +375,17 @@\n      e =\n+=\n  0%0A     \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-05_16-22-59",
+            "content": "@@ -332,28 +332,67 @@\n     \n+ \n e \n++\n = \n-(e + 1) %25 len(j)\n+1%0A        if e == len(j)%7B%0A            e = 0%0A        %7D\n %0A   \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-05_16-24-25",
+            "content": "@@ -563,17 +563,17 @@\n r range \n-q\n+e\n  - 1%7B%0A  \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-05_16-26-39",
+            "content": "@@ -117,17 +117,17 @@\n if elem \n-=\n+!\n = 0%7B%0A   \n@@ -131,35 +131,8 @@\n     \n-        continue%0A        %7D%0A\n     \n@@ -151,16 +151,26 @@\n t(elem)%0A\n+        %7D%0A\n         \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-05_16-28-08",
+            "content": "@@ -717,30 +717,10 @@\n )%0A    %7D%0A\n-    print_jog(j, e)%0A\n %7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-05_16-28-33",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc print_jog(j []int, e int){\n    fmt.Print(\"[ \")\n    for i, elem := range j{\n        if elem == 0{\n            continue\n        }\n        fmt.Print(elem)\n        if i == e {\n            fmt.Print(\">\")\n        }\n        fmt.Print(\" \")\n    }\n    fmt.Print(\"]\\n\")\n}\n\nfunc procurar_vivo(j []int, e int) int{\n    for {\n       e = (e + 1) % len(j)\n        if j [e] != 0 {\n            return e\n        }\n    }\n}\n\nfunc main() {\n\tvar q, e int\n\tfmt.Scan(&q, &e)\n\n\tj := make([]int, 0, q)\n    \n\tfor i := 1; i <= q; i++ {\n\t\tj = append(j, i)\n\t}\n    e -= 1\n    for range q - 1{\n        print_jog(j, e)\n        vai_morrer := procurar_vivo(j, e)\n        j[vai_morrer] = 0\n        e = procurar_vivo(j, e)\n    }\n    print_jog(j, e)\n}\n",
+            "lines": "46"
         }
     ]
 }
