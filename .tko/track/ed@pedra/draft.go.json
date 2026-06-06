@@ -47,8 +47,13 @@
         },
         {
             "label": "2026-03-17_01-42-43",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar n int\n\n\tfmt.Scan(&n)\n\n    vencedor := -1\n    diferenca:= 101\n\n\tfor i := 0; i < n; i++ {\n\t\tvar a, b int\n\t\tfmt.Scan(&a, &b)\n\n        if a >= 10 && b >= 10{\n            dif:= int(math.Abs(float64(a - b)))\n\n            if vencedor == -1 || dif < diferenca{\n                diferenca = dif\n                vencedor = i\n            }\n        }\n\t}\n\n    if vencedor != -1{\n        fmt.Println(vencedor)\n    } else {\n        fmt.Println(\"sem ganhador\")\n    }\n}\n",
+            "content": "@@ -18,13 +18,26 @@\n ort \n+(%0A%09\n %22fmt%22\n+%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -63,63 +63,28 @@\n int%0A\n-%09if _, err := fmt.Scan(&n); err != nil %7B%0A%09%09return%0A%09%7D%0A%0A%09\n+%0A%09fmt.Scan(&n)%0A%0A    \n venc\n@@ -94,31 +94,29 @@\n r := -1%0A\n-%09menorD\n+    d\n iferenca\n  := 101%0A\n@@ -107,17 +107,16 @@\n iferenca\n- \n := 101%0A%0A\n@@ -176,18 +176,24 @@\n a, &b)%0A%0A\n-%09%09\n+        \n if a %3E= \n@@ -209,67 +209,71 @@\n = 10\n- \n %7B%0A\n-%09%09%09\n+            \n dif\n- \n := \n-a - b%0A%09%09%09if dif %3C 0 %7B%0A%09%09%09%09dif = -dif%0A%09%09%09%7D%0A%0A%09%09%09\n+int(math.Abs(float64(a - b)))%0A%0A            \n if v\n@@ -295,30 +295,25 @@\n %7C dif %3C \n-menorD\n+d\n iferenca\n  %7B%0A%09%09%09%09m\n@@ -308,67 +308,103 @@\n enca\n- \n %7B%0A\n-%09%09%09%09menorDiferenca = dif%0A%09%09%09%09vencedor = i%0A%09%09%09%7D%0A%09%09\n+                diferenca = dif%0A                vencedor = i%0A            %7D%0A        \n %7D%0A%09%7D%0A%0A\n-%09\n+    \n if v\n@@ -416,21 +416,26 @@\n or != -1\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -448,17 +448,20 @@\n ncedor)%0A\n-%09\n+    \n %7D else %7B\n@@ -461,18 +461,24 @@\n  else %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -497,13 +497,16 @@\n hador%22)%0A\n-%09\n+    \n %7D%0A%7D%0A\n",
             "lines": "35"
+        },
+        {
+            "label": "2026-05-26_17-38-52",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tif _, err := fmt.Scan(&n); err != nil {\n\t\treturn\n\t}\n\n\tvencedor := -1\n\tmenorDiferenca := 101\n\n\tfor i := 0; i < n; i++ {\n\t\tvar a, b int\n\t\tfmt.Scan(&a, &b)\n\n\t\tif a >= 10 && b >= 10 {\n\t\t\tdif := a - b\n\t\t\tif dif < 0 {\n\t\t\t\tdif = -dif\n\t\t\t}\n\n\t\t\tif vencedor == -1 || dif < menorDiferenca {\n\t\t\t\tmenorDiferenca = dif\n\t\t\t\tvencedor = i\n\t\t\t}\n\t\t}\n\t}\n\n\tif vencedor != -1 {\n\t\tfmt.Println(vencedor)\n\t} else {\n\t\tfmt.Println(\"sem ganhador\")\n\t}\n}\n",
+            "lines": "36"
         }
     ]
 }
