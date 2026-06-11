@@ -2,8 +2,48 @@
     "patches": [
         {
             "label": "2026-05-20_19-55-02",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc eh_primo(x int, div int) bool {\n\n\tif x < 2 {\n\t\treturn false\n\t}\n\tif div == x {\n\t\treturn true\n\t}\n\tif x%div == 0 {\n\t\treturn false\n\t}\n\n\treturn eh_primo(x, div+1)\n\t_, _ = x, div\n\treturn false\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\tif eh_primo(x, 2) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "content": "@@ -184,16 +184,45 @@\n  div+1)%0A\n+%09_, _ = x, div%0A%09return false%0A\n %7D%0A%0Afunc \n",
             "lines": "30"
+        },
+        {
+            "label": "2026-06-06_04-06-08",
+            "content": "@@ -191,212 +191,8 @@\n %0A%7D%0A%0A\n-func proximo (x int, tl int, cont int) int %7B%0A%09if eh_primo(tl , 2) %7B%0A%09%09cont ++%0A%09%7D%0A%09if cont == tl %7B%0A%09%09return tl%0A%09%7D%0A%09return proximo (x, tl + 1, cont)%0A%7D%0A%0Afunc enesimo (x int) int %7B%0A%09return proximo(x, 2, 0)%0A%7D%0A\n func\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-06_04-16-23",
+            "content": "@@ -143,27 +143,28 @@\n  %7B%0A%09%09return \n-tru\n+fals\n e%0A%09%7D%0A%0A%09retur\n@@ -294,17 +294,18 @@\n %09return \n-x\n+tl\n %0A%09%7D%0A%09ret\n@@ -435,32 +435,84 @@\n x)%0A%09\n-%0A%09fmt.Println(enesimo(x))\n+if eh_primo(x, 2) %7B%0A%09%09fmt.Println(%22true%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22false%22)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-06-06_04-17-05",
+            "content": "@@ -143,28 +143,27 @@\n  %7B%0A%09%09return \n-fals\n+tru\n e%0A%09%7D%0A%0A%09retur\n@@ -293,18 +293,17 @@\n %09return \n-tl\n+x\n %0A%09%7D%0A%09ret\n@@ -320,16 +320,20 @@\n o (x, tl\n+ + 1\n , cont)%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-06_04-17-47",
+            "content": "@@ -326,16 +326,14 @@\n , tl\n- + 1, tl\n+, cont\n )%0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-06_04-18-14",
+            "content": "@@ -143,27 +143,28 @@\n  %7B%0A%09%09return \n-tru\n+fals\n e%0A%09%7D%0A%0A%09retur\n@@ -328,20 +328,18 @@\n tl + 1, \n-con\n t\n+l\n )%0A%7D%0A%0Afun\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-06_04-20-50",
+            "content": "@@ -143,28 +143,27 @@\n  %7B%0A%09%09return \n-fals\n+tru\n e%0A%09%7D%0A%0A%09retur\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-06_04-21-43",
+            "content": "@@ -276,25 +276,26 @@\n %09if cont == \n-x\n+tl\n  %7B%0A%09%09return \n@@ -387,25 +387,24 @@\n (x, 2, 0)%0A%7D%0A\n-%0A\n func main() \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-06_04-23-22",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc eh_primo(x int, div int) bool {\n\n\tif x < 2 {\n\t\treturn false\n\t}\n\tif div == x {\n\t\treturn true\n\t}\n\tif x%div == 0 {\n\t\treturn false\n\t}\n\n\treturn eh_primo(x, div+1)\n}\n\nfunc proximo (x int, tl int, cont int) int {\n\tif eh_primo(tl , 2) {\n\t\tcont ++\n\t}\n\tif cont == x {\n\t\treturn tl\n\t}\n\treturn proximo (x, tl + 1, cont)\n}\n\nfunc enesimo (x int) int {\n\treturn proximo(x, 2, 0)\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\t\n\tfmt.Println(enesimo(x))\n}\n",
+            "lines": "39"
         }
     ]
 }

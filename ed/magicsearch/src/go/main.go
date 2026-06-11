@@ -9,8 +9,31 @@ import (
 )
 
 func MagicSearch(slice []int, value int) int {
-	_, _ = slice, value
-	return 0
+	if len(slice) == 0 {
+		return 0
+	}
+
+	esquerda, direita := 0, len(slice)-1
+	ultimo := -1
+	for esquerda <= direita {
+		meio := (esquerda + direita) / 2
+		if slice[meio] == value {
+			ultimo = meio
+			esquerda = meio + 1
+		} else if slice[meio] < value {
+			esquerda = meio + 1
+		} else {
+			direita = meio - 1
+		}
+	}
+
+	if ultimo != -1 {
+		return ultimo
+	}
+
+	return esquerda
+	//_, _ = slice, value
+	//return 0
 }
 
 func main() {

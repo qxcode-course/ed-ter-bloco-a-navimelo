@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-06_04-31-27",
+            "content": "@@ -93,20 +93,9 @@\n urn \n-%22%25n %5E %25n = %22\n+n\n %0A%7D%0A%0A\n@@ -142,16 +142,20 @@\n nln(&x)%0A\n+    \n %0A    fmt\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-06-06_04-37-24",
+            "content": "@@ -60,74 +60,53 @@\n n = \n+(\n n * n\n-%0A    fmt.Printf(%22%25d %5E %25d = %25d %5E %25d + %22, n, n, n)%0A    return n\n+) + (2 * n) + 1%0A    return %22%25n %5E %25n = %22\n %0A%7D%0A%0A\n@@ -153,20 +153,16 @@\n nln(&x)%0A\n-    \n %0A    fmt\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-06-06_04-39-50",
+            "content": "@@ -84,17 +84,21 @@\n (%22%25d\n-%5E\n+ %5E \n %25d = %25d\n-%5E\n+ %5E \n %25d +\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-06_04-40-16",
+            "content": "@@ -85,21 +85,25 @@\n %22%25d%5E\n-2 + 2*\n+%25d = %25d%5E\n %25d + \n-1\n %22\n+, n\n , n,\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-06_04-42-19",
+            "content": "@@ -56,24 +56,18 @@\n     \n-if \n n =\n-= 1 %7B%0A    \n+ n * n%0A\n     \n@@ -87,45 +87,39 @@\n d%5E2 \n-= %25d%5Cn\n++ 2*%25d + 1\n %22, n, \n-1\n+n\n )%0A    \n-    \n return \n-1%0A    %7D\n+n\n %0A%7D%0A%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-06_04-45-04",
+            "content": "@@ -131,85 +131,8 @@\n   %7D%0A\n-    fmt.Printf(%22%25d%5E2 = %25d + %25d%5E2%5Cn%22, n, n, n-1)%0A    return n + quadrado(n-1)%0A\n %7D%0A%0Af\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-06-06_04-45-34",
+            "content": "@@ -131,24 +131,88 @@\n   %7D%0A    \n-return 1\n+fmt.Printf(%22%25d%5E2 = %25d + %25d%5E2%5Cn%22, n, n, n-1)%0A    return n + quadrado(n-1)\n %0A%7D%0A%0Afunc\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-06_04-45-53",
+            "content": "@@ -135,217 +135,16 @@\n     \n-fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = ?%5Cn%22, n, n-1, n-1)%0A%0A    rec := quadrado (n-1)%0A%0A    resultado := rec + 2*(n-1) + 1%0A    fmt.Printf(%22%25d%5E2 = %25d + 2*%25d + 1 = %25d%5Cn%22, n, rec, n-1, resultado)%0A    return resultado\n+return 1\n %0A%7D%0A%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-06_04-47-59",
+            "content": "@@ -272,16 +272,21 @@\n (%22%25d%5E2 =\n+ %25d +\n  2*%25d + \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-06-06_04-49-34",
+            "content": "@@ -250,17 +250,16 @@\n -1) + 1%0A\n-%0A\n     fmt.\n@@ -276,16 +276,8 @@\n %5E2 =\n-  %25d%5E2 +\n  2*%25\n@@ -315,17 +315,16 @@\n ultado)%0A\n-%0A\n     retu\n@@ -336,17 +336,16 @@\n sultado%0A\n-%0A\n %7D%0A%0Afunc \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-06-06_04-50-24",
+            "content": "@@ -265,32 +265,33 @@\n t.Printf(%22%25d%5E2 =\n+ \n  %25d%5E2 + 2*%25d + 1\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-06_04-50-32",
+            "content": "@@ -298,27 +298,27 @@\n = %25d%5Cn%22, n, \n-n-1\n+rec\n , n-1, resul\n@@ -345,16 +345,17 @@\n sultado%0A\n+%0A\n %7D%0A%0Afunc \n@@ -406,16 +406,28 @@\n    %0A    \n+fmt.Println(\n quadrado\n@@ -429,11 +429,12 @@\n drado(x)\n+)\n %0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-06_04-51-59",
+            "content": "package main\nimport \"fmt\"\n\nfunc quadrado (n int) int {\n    if n == 1 {\n        fmt.Printf(\"%d^2 = %d\\n\", n, 1)\n        return 1\n    }\n    fmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = ?\\n\", n, n-1, n-1)\n\n    rec := quadrado (n-1)\n\n    resultado := rec + 2*(n-1) + 1\n\n    fmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = %d\\n\", n, n-1, n-1, resultado)\n\n    return resultado\n}\n\nfunc main() {\n    var x int \n    fmt.Scanln(&x)\n    \n    quadrado(x)\n}\n",
+            "lines": "25"
+        }
+    ]
+}

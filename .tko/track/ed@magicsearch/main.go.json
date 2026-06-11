@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-06_02-22-42",
+            "content": "@@ -225,16 +225,17 @@\n %09return \n+-\n 1%0A%7D%0A%0Afun\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-06_02-23-44",
+            "content": "@@ -152,37 +152,86 @@\n %09%7D%0A%09\n-_, _ = slice, value%0A%09return 0\n+for i, elem := range slice %7B%0A%09%09if elem == value %7B%0A%09%09%09return i%0A%09%09%7D%0A%09%7D%0A%09return 1\n %0A%7D%0A%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-06_02-24-07",
+            "content": "@@ -151,341 +151,9 @@\n %0A%09%7D%0A\n-%0A%09esquerda, direita := 0, len(slice)-1%0A%09ultimo := -1%0A%09for esquerda %3C= direita %7B%0A%09%09meio := (esquerda + direita) / 2%0A%09%09if slice%5Bmeio%5D == value %7B%0A%09%09%09ultimo = meio%0A%09%09%09esquerda = meio + 1%0A%09%09%7D else if slice%5Bmeio%5D %3C value %7B%0A%09%09%09esquerda = meio + 1%0A%09%09%7D else %7B%0A%09%09%09direita = meio - 1%0A%09%09%7D%0A%09%7D%0A%0A%09if ultimo != -1 %7B%0A%09%09return ultimo%0A%09%7D%0A%09return -1%0A%09//\n+%09\n _, _\n@@ -173,10 +173,8 @@\n ue%0A%09\n-//\n retu\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-06_02-29-58",
+            "content": "@@ -474,17 +474,18 @@\n %09return \n-0\n+-1\n %0A%09//_, _\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-06-06_02-34-10",
+            "content": "@@ -466,17 +466,16 @@\n timo%0A%09%7D%0A\n-%0A\n %09return \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-06-06_02-42-19",
+            "content": "@@ -475,24 +475,17 @@\n %09return \n-esquerda\n+0\n %0A%09//_, _\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-06_02-42-42",
+            "content": "@@ -197,17 +197,18 @@\n timo := \n-0\n+-1\n %0A%09for es\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-06_02-43-10",
+            "content": "@@ -197,18 +197,17 @@\n timo := \n--1\n+0\n %0A%09for es\n@@ -414,16 +414,20 @@\n a = meio\n+ - 1\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-06_02-43-24",
+            "content": "@@ -419,12 +419,8 @@\n meio\n- - 1\n %0A%09%09%7D\n@@ -471,22 +471,23 @@\n %09return \n-direit\n+esquerd\n a%0A%09//_, \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-06_02-44-30",
+            "content": "@@ -475,23 +475,22 @@\n %09return \n-esquerd\n+direit\n a%0A%09//_, \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-06_02-44-38",
+            "content": "@@ -141,17 +141,18 @@\n %09return \n-0\n+-1\n %0A%09%7D%0A%0A%09es\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-06_02-45-21",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tif len(slice) == 0 {\n\t\treturn 0\n\t}\n\n\tesquerda, direita := 0, len(slice)-1\n\tultimo := -1\n\tfor esquerda <= direita {\n\t\tmeio := (esquerda + direita) / 2\n\t\tif slice[meio] == value {\n\t\t\tultimo = meio\n\t\t\tesquerda = meio + 1\n\t\t} else if slice[meio] < value {\n\t\t\tesquerda = meio + 1\n\t\t} else {\n\t\t\tdireita = meio - 1\n\t\t}\n\t}\n\n\tif ultimo != -1 {\n\t\treturn ultimo\n\t}\n\n\treturn esquerda\n\t//_, _ = slice, value\n\t//return 0\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "53"
+        }
+    ]
+}
