@@ -26,22 +26,27 @@ func NewMultiSet(capacity int) *MultiSet {
 }
 
 func (ms *MultiSet) expand() {
-	if ms.size == ms.capacity {
-		newCapacity := ms.capacity * 2
+	newCapacity := ms.capacity * 2
 		if newCapacity == 0 {
 			newCapacity = 1
 		}
-		newData := make([]int, ms.size, newCapacity)
-		copy(newData, ms.data)
+		newData := make([]int, newCapacity)
+		copy(newData, ms.data[:ms.size])
 		ms.data = newData
 		ms.capacity = newCapacity
-	}
 }
 
 func (ms *MultiSet) search (value int) int {
-	for i, v := range ms.data {
-		if v == value {
-			return i
+	l := 0
+	r := ms.size - 1
+	for l <= r {
+		mid := (l + r) / 2
+		if ms.data[mid] == value{
+			return mid
+		} else if ms.data[mid] < value {
+			l = mid + 1 
+		} else {
+			r = mid - 1
 		}
 	}
 	return -1
@@ -51,7 +56,16 @@ func (ms *MultiSet) insert (value int){
 	if ms.size == ms.capacity {
 		ms.expand()
 	}
-	ms.data = append(ms.data, value)
+	idx :=  0
+	for idx < ms.size && ms.data[idx] < value{
+		idx++
+	}
+
+	for i := ms.size; i > idx; i--{
+		ms.data[i] = ms.data[i - 1]
+	}
+
+	ms.data[idx] = value
 	ms.size++
 }
 
@@ -59,58 +73,55 @@ func (ms *MultiSet) Insert(value int) {
 	ms.insert(value)
 }
 
-func (ms *MultiSet) erase (value int) {
+func (ms *MultiSet) erase (value int) bool{
 	index := ms.search(value)
 	if index != -1 {
-		ms.data = append(ms.data[:index], ms.data[index+1:]...)
+		for i := index; i < ms.size - 1; i++{
+			ms.data[i] = ms.data[i + 1]
+		}
 		ms.size--
+		return true
 	}
+	return false
 }
 
 func (ms *MultiSet) Erase(value int) {
 	ms.erase(value)
 }	
 
-func (ms *MultiSet) contains (value int) bool {
+func (ms *MultiSet) Contains (value int) bool {
 	return ms.search(value) != -1
 }
 
-func (ms *MultiSet) Contains(value int) bool {
-	return ms.contains(value)
+func (ms *MultiSet) Count(value int) int {
+	index := ms.search (value)
+	if index == -1 {
+		return 0
+	}
+	count := 1
+	for i := index - 1; i >= 0 && ms.data[i] == value; i--{
+		count ++
+	}
+	for i := index + 1; i < ms.size && ms.data[i] == value; i++{
+		count ++
+	}
+	return count 
 }
 
-func (ms *MultiSet) count (value int) int {
-	count := 0
-	for _, v := range ms.data {
-		if v == value {
-			count++
+func (ms *MultiSet) Unique() int {
+	if ms.size == 0{
+		return 0
+	}
+	dif := 1
+	for i := 1; i < ms.size; i++ {
+		if ms.data[i] != ms.data[i - 1]{
+			dif++
 		}
 	}
-	return count
-}
-
-func (ms *MultiSet) Count(value int) int {
-	return ms.count(value)
-}
-
-func (ms *MultiSet) unique() []int {
-	uniqueValues := make(map[int]bool)
-	for _, v := range ms.data {
-		uniqueValues[v] = true
-	}
-	result := make([]int, 0, len(uniqueValues))
-	for v := range uniqueValues {
-		result = append(result, v)
-	}
-	return result
-}
-
-func (ms *MultiSet) Unique() []int {
-	return ms.unique()
+	return dif
 }
 
 func (ms *MultiSet) clear() {
-	ms.data = make([]int, 0, ms.capacity)
 	ms.size = 0
 }
 
@@ -149,21 +160,38 @@ func main() {
 		case "end":
 			return
 		case "init":
-			value, _ := strconv.Atoi(args[1])
-			ms = NewMultiSet(value)
+			capacity, _ := strconv.Atoi(args[1])
+			ms = NewMultiSet(capacity)
 		case "insert":
-			// for _, part := range args[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// }
+			for _, numstr := range args[1:] {
+				num, _ := strconv.Atoi(numstr)
+				ms.Insert(num)
+			 }
 		case "show":
+			strValues := make ([]string, ms.size)
+			for i := 0; i < ms.size; i++{
+				strValues[i] = strconv.Itoa(ms.data[i])
+			}
+			fmt.Printf("[%s]\n", strings.Join(strValues, ", "))
 		case "erase":
-			// value, _ := strconv.Atoi(args[1])
+			num, _ := strconv.Atoi(args[1])
+			if !ms.erase(num){
+				fmt.Println("value not found")
+			}
 		case "contains":
-			// value, _ := strconv.Atoi(args[1])
+			num, _ := strconv.Atoi(args[1])
+			if ms.Contains(num){
+				fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "count":
-			// value, _ := strconv.Atoi(args[1])
+			num, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Count(num))
 		case "unique":
+			fmt.Println(ms.Unique())
 		case "clear":
+			ms.clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}

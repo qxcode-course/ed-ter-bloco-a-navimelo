@@ -1,0 +1,39 @@
+2026-06-12 00:04:12, MOVE, v:1, k:ed@santo, mode:BACK
+2026-06-12 01:50:52, MOVE, v:1, k:ed@santo, mode:PICK
+2026-06-12 01:55:07, MOVE, v:1, k:ed@santo, mode:BACK
+2026-06-12 01:55:11, MOVE, v:1, k:ed@santo, mode:PICK
+2026-06-12 01:52:53, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-06-12 01:59:07, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:17
+2026-06-12 01:59:34, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:17
+2026-06-12 01:59:42, MOVE, v:1, k:ed@santo, mode:BACK
+2026-06-12 01:59:55, MOVE, v:1, k:ed@santo, mode:PICK
+2026-06-12 02:00:56, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:17
+2026-06-12 02:01:08, MOVE, v:1, k:ed@santo, mode:BACK
+2026-06-12 02:01:15, MOVE, v:1, k:ed@santo, mode:PICK
+2026-06-12 02:02:19, EXEC, v:1, k:ed@santo, mode:FULL, size:16, fail:COMP
+2026-06-12 02:03:38, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:17
+2026-06-12 02:03:55, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:17
+2026-06-12 02:04:17, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:17
+2026-06-12 02:04:50, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-06-12 02:04:17, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-06-12 02:04:55, EXEC, v:1, k:ed@santo, mode:FULL, rate:100, size:17
+2026-06-12 02:04:58, MOVE, v:1, k:ed@santo, mode:BACK
+2026-06-12 02:05:16, SELF, v:1, k:ed@santo, self:1, rate:100, study:30, concept:1
+2026-06-12 02:06:38, SELF, v:1, k:ed@rotten, self:1, rate:100, study:60, concept:1
+2026-06-12 02:06:38, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-06-12 02:06:40, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-06-12 02:06:43, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-06-12 02:06:44, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100
+2026-06-12 02:06:45, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-06-12 02:07:41, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-06-12 02:08:16, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0
+2026-06-12 02:08:24, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-06-12 02:08:26, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-06-12 02:06:44, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-06-12 02:08:16, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-12 02:15:00, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-06-12 11:29:41, MOVE, v:1, k:ed@bitcoin, mode:DOWN
+2026-06-12 11:29:44, MOVE, v:1, k:ed@bitcoin, mode:PICK
+2026-06-12 11:30:34, MOVE, v:1, k:ed@bitcoin, mode:BACK
+2026-06-12 11:29:41, MOVE, v:1, k:ed@bitcoin, mode:EDIT
+2026-06-12 11:29:41, MOVE, v:1, k:ed@bitcoin, mode:EDIT

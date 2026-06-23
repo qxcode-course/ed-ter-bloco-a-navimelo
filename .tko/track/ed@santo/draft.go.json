@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-11_23-50-13",
+            "content": "@@ -29,265 +29,20 @@\n unc \n-doar(n int) int %7B%0A    if n == 0 %7B%0A        return 0%0A    %7D%0A    if n == 1 %7B%0A        return 1%0A    %7D%0A    if n%252 == 0 %7B%0A        return doar(n/2)%0A    %7D%0A    return doar(n-1) + doar(n-2)%0A%7D%0A%0Afunc main() %7B%0A    var n, c int%0A    fmt.Scan(&n, &c)%0A    fmt.Println(doar(n))%0A\n+main() %7B%0A    \n %0A%7D%0A\n",
+            "lines": "6"
+        },
+        {
+            "label": "2026-06-11_23-50-26",
+            "content": "@@ -36,16 +36,184 @@\n r(n int)\n+ int %7B%0A    if n == 0 %7B%0A        return 0%0A    %7D%0A    if n == 1 %7B%0A        return 1%0A    %7D%0A    if n%252 == 0 %7B%0A        return doar(n/2)%0A    %7D%0A    return doar(n-1) + doar(n-2)%0A%7D\n %0A%0Afunc m\n@@ -262,12 +262,32 @@\n &c)%0A    \n+fmt.Println(doar(n))\n %0A%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-06-11_23-54-01",
+            "content": "@@ -30,130 +30,18 @@\n nc d\n-inheiro(igreja int, c int) int %7B%0A    if igreja == 0%7B%0A        return 0.0%0A    %7D%0A    return (dinheiro(igreja-1, c) + c) * 2%0A%7D\n+oar(n int)\n %0A%0Afu\n@@ -99,59 +99,7 @@\n    %0A\n-    doacao := dinheiro(n, c)%0A    fmt.Println(doacao)\n %0A%7D%0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-06-12_01-59-07",
+            "content": "@@ -147,9 +147,9 @@\n  c) \n-/\n+*\n  2%0A%7D\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-12_01-59-34",
+            "content": "@@ -53,23 +53,19 @@\n  c int) \n-float64\n+int\n  %7B%0A    i\n@@ -144,25 +144,14 @@\n ) + \n-float64(c)\n+c\n ) / 2\n-.0\n %0A%7D%0A%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-12_02-00-56",
+            "content": "@@ -271,20 +271,12 @@\n tln(\n-%22%25.2f%22, \n doacao)%0A\n@@ -275,8 +275,10 @@\n doacao)%0A\n+%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-12_02-02-19",
+            "content": "@@ -283,10 +283,8 @@\n doacao)%0A\n-%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-06-12_02-03-38",
+            "content": "@@ -267,16 +267,24 @@\n Println(\n+%22%25.2f%22, \n doacao)%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-12_02-03-55",
+            "content": "@@ -271,16 +271,8 @@\n tln(\n-%22%25.2f%22, \n doac\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-12_02-04-17",
+            "content": "@@ -268,17 +268,16 @@\n rint\n-f\n+ln\n (%22%25.2f\n-%5Cn\n %22, d\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-12_02-04-55",
+            "content": "package main\nimport \"fmt\"\n\nfunc dinheiro(igreja int, c int) float64 {\n    if igreja == 0{\n        return 0.0\n    }\n    return (dinheiro(igreja-1, c) + float64(c)) / 2.0\n}\n\nfunc main() {\n    var n, c int\n    fmt.Scan(&n, &c)\n    \n    doacao := dinheiro(n, c)\n    fmt.Printf(\"%.2f\\n\", doacao)\n}\n",
+            "lines": "17"
+        }
+    ]
+}
