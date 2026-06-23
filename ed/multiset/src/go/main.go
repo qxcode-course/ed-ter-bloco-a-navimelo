@@ -15,41 +15,45 @@ type MultiSet struct {
 }
 
 func NewMultiSet(capacity int) *MultiSet {
-	if capacity < 0 {
-		capacity = 0
-	}
 	return &MultiSet{
-		data:     make([]int, 0, capacity),
-		size:     0,
+		data: make([]int, 0 , capacity),
+		size: 0,
 		capacity: capacity,
 	}
 }
 
 func (ms *MultiSet) expand() {
-	newCapacity := ms.capacity * 2
-		if newCapacity == 0 {
-			newCapacity = 1
-		}
-		newData := make([]int, newCapacity)
+	if ms.capacity == 0 {
+		ms.capacity = 1
+		ms.data = make([]int, 0, ms.capacity)
+	} else {
+		ms.capacity *= 2
+		newData := make([]int, ms.size, ms.capacity)
 		copy(newData, ms.data[:ms.size])
 		ms.data = newData
-		ms.capacity = newCapacity
+	}
 }
 
 func (ms *MultiSet) search (value int) int {
-	l := 0
-	r := ms.size - 1
-	for l <= r {
-		mid := (l + r) / 2
-		if ms.data[mid] == value{
-			return mid
-		} else if ms.data[mid] < value {
-			l = mid + 1 
-		} else {
-			r = mid - 1
+	if ms.size == 0{
+		ms.expand()
+	}
+	index := ms.size
+
+	for i:= 0; i < ms.size; i++ {
+		if value < ms.data[i] {
+			index = i
+			break
 		}
 	}
-	return -1
+
+	ms.data = append(ms.data, 0)
+	for i:= ms.size; i > index; i-- {
+		ms.data[i] = ms.data[i - 1]
+	}
+
+	ms.data[index] = value
+	ms.size++
 }
 
 func (ms *MultiSet) insert (value int){

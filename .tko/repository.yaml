@@ -13,24 +13,24 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@vector
-- ed@tree
-- ed@list
+- ed@dfs
 - ed@map_set
-- ed@linear
-- ed@basic
 - ed@bfs
 - ed@rec
+- ed@basic
+- ed@list
+- ed@linear
+- ed@tree
+- ed@vector
 - ed@backtrack
-- ed@dfs
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@magicsearch
-selected_index: 47
+selected: ed@multiset
+selected_index: 46
