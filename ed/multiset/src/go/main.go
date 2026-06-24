@@ -25,17 +25,17 @@ func NewMultiSet(capacity int) *MultiSet {
 func (ms *MultiSet) expand() {
 	if ms.capacity == 0 {
 		ms.capacity = 1
-		ms.data = make([]int, 0, ms.capacity)
+		ms.data = make([]int, ms.capacity)
 	} else {
 		ms.capacity *= 2
 		newData := make([]int, ms.size, ms.capacity)
-		copy(newData, ms.data[:ms.size])
+		copy(newData, ms.data)
 		ms.data = newData
 	}
 }
 
-func (ms *MultiSet) search (value int) int {
-	if ms.size == 0{
+func (ms *MultiSet) Insert (value int){
+	if ms.size == ms.capacity{
 		ms.expand()
 	}
 	index := ms.size
@@ -56,49 +56,66 @@ func (ms *MultiSet) search (value int) int {
 	ms.size++
 }
 
-func (ms *MultiSet) insert (value int){
-	if ms.size == ms.capacity {
-		ms.expand()
-	}
-	idx :=  0
-	for idx < ms.size && ms.data[idx] < value{
-		idx++
-	}
-
-	for i := ms.size; i > idx; i--{
-		ms.data[i] = ms.data[i - 1]
-	}
-
-	ms.data[idx] = value
-	ms.size++
+func (ms *MultiSet) String() string{
+	return "[" + Join(ms.data[0: ms.size], ", ") + "]"
 }
 
-func (ms *MultiSet) Insert(value int) {
-	ms.insert(value)
-}
-
-func (ms *MultiSet) erase (value int) bool{
-	index := ms.search(value)
-	if index != -1 {
-		for i := index; i < ms.size - 1; i++{
-			ms.data[i] = ms.data[i + 1]
+func (ms *MultiSet) Contains (value int) bool {
+	l, r := 0, ms.size - 1
+	for l <= r {
+		mid := (l + r)/2
+		if ms.data[mid] == value {
+			return true
+		} else if ms.data[mid] < value {
+			l = mid + 1
+		} else {
+			r = mid - 1
 		}
-		ms.size--
-		return true
 	}
 	return false
 }
 
-func (ms *MultiSet) Erase(value int) {
-	ms.erase(value)
+func (ms *MultiSet) Erase(value int) error{
+	l, r := 0, ms.size - 1
+	index := -1
+	for l <= r {
+		mid := (l + r)/2
+		if ms.data[mid] == value {
+			index = mid
+			break
+		} else if ms.data[mid] < value {
+			l = mid + 1
+		} else {
+			r = mid - 1
+		}
+	}
+	if index == -1 {
+		return fmt.Errorf("value not found")
+	}
+	for i := index; i < ms.size - 1; i++{
+		ms.data[i] = ms.data[i+1]
+	}
+	ms.size--
+	ms.data = ms.data[:ms.size]
+
+	return nil
 }	
 
-func (ms *MultiSet) Contains (value int) bool {
-	return ms.search(value) != -1
-}
-
 func (ms *MultiSet) Count(value int) int {
-	index := ms.search (value)
+	l, r := 0, ms.size - 1
+	index := -1
+	for l <= r {
+		mid := (l + r)/2
+		if ms.data[mid] == value{
+			index = mid
+			break
+		} else if ms.data[mid] < value{
+			l = mid + 1
+		} else {
+			r = mid - 1
+		}
+	}
+
 	if index == -1 {
 		return 0
 	}
@@ -125,12 +142,9 @@ func (ms *MultiSet) Unique() int {
 	return dif
 }
 
-func (ms *MultiSet) clear() {
-	ms.size = 0
-}
-
 func (ms *MultiSet) Clear() {
-	ms.clear()
+	ms.data = make([]int, 0, ms.capacity)
+	ms.size = 0
 }
 
 func Join(slice []int, sep string) string {
@@ -148,7 +162,6 @@ func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
 	ms := NewMultiSet(0)
-	_ = ms
 
 	for scanner.Scan() {
 		fmt.Print("$")
@@ -164,38 +177,30 @@ func main() {
 		case "end":
 			return
 		case "init":
-			capacity, _ := strconv.Atoi(args[1])
-			ms = NewMultiSet(capacity)
+			value, _ := strconv.Atoi(args[1])
+			ms = NewMultiSet(value)
 		case "insert":
-			for _, numstr := range args[1:] {
-				num, _ := strconv.Atoi(numstr)
-				ms.Insert(num)
+			for _, part := range args[1:] {
+				value, _ := strconv.Atoi(part)
+				ms.Insert(value)
 			 }
 		case "show":
-			strValues := make ([]string, ms.size)
-			for i := 0; i < ms.size; i++{
-				strValues[i] = strconv.Itoa(ms.data[i])
-			}
-			fmt.Printf("[%s]\n", strings.Join(strValues, ", "))
+			fmt.Println(ms.String())
 		case "erase":
-			num, _ := strconv.Atoi(args[1])
-			if !ms.erase(num){
-				fmt.Println("value not found")
+			value, _ := strconv.Atoi(args[1])
+			if err := ms.Erase(value); err != nil{
+				fmt.Println(err.Error())
 			}
 		case "contains":
-			num, _ := strconv.Atoi(args[1])
-			if ms.Contains(num){
-				fmt.Println("true")
-			} else {
-				fmt.Println("false")
-			}
+			value, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Contains(value))
 		case "count":
-			num, _ := strconv.Atoi(args[1])
-			fmt.Println(ms.Count(num))
+			value, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Count(value))
 		case "unique":
 			fmt.Println(ms.Unique())
 		case "clear":
-			ms.clear()
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
