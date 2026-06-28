@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-24_19-30-32",
+            "content": "@@ -136,35 +136,24 @@\n Pair %7B%0A%09\n-if len(vet) == 0%7B%0A%09\n+_ = vet%0A\n %09return \n@@ -160,310 +160,62 @@\n nil%0A\n-%09\n %7D%0A\n-%09cont := make(map%5Bint%5Dint)%0A%09for _, v := range vet %7B%0A%09%09cont%5Bv%5D++%0A%09%7D%0A%0A%09var keys %5B%5Dint%0A%09for k := range cont %7B%0A%09%09keys = append(keys, k)%0A%09%7D%0A%09sort.Ints(keys)%0A%09var r %5B%5DPair%0A%09for _, k := range keys\n+%0Afunc teams(vet %5B%5Dint) %5B%5DPair\n  %7B%0A%09\n-%09r = append(r, Pair%7Bk, cont%5B%5D%5Bk%5D%7D)%0A%09%7D%0A%09return r%0A%7D%0A%0Afunc teams(vet %5B%5Dint) %5B%5DPair %7B%0A%09if len(vet) == 0%7B%0A%09%09%0A%09%7D\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-06-24_19-42-01",
+            "content": "@@ -446,35 +446,39 @@\n Pair %7B%0A%09\n-_ = vet%0A%09return nil\n+if len(vet) == 0%7B%0A%09%09%0A%09%7D\n %0A%7D%0A%0Afunc\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-06-24_19-42-11",
+            "content": "@@ -450,261 +450,27 @@\n  %7B%0A%09\n-if len(vet) == 0%7B%0A%09%09return nil%0A%09%7D%0A%0A%09var r %5B%5DPair%0A%09currentS := vet%5B0%5D%0A%09cont := 1%0A%09for i := 1; i %3C len(vet); i++ %7B%0A%09%09s := vet%5Bi%5D%0A%09%09if s == currentS %7B%0A%09%09%09cont++%0A%09%09%7D else %7B%0A%09%09%09r = append(r, Pair%7BcurrentS, cont%7D)%0A%09%09%09currentS = s%0A%09%09%09cont = 1%0A%09%09%7D%0A%09%7D%0A%0A%09return r\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-28_16-01-52",
+            "content": "@@ -42,16 +42,8 @@\n os%22%0A\n-%09%22sort%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trconv%22%0A\n+\n %09%22string\n@@ -391,16 +391,18 @@\n k, cont%5B\n+%5D%5B\n k%5D%7D)%0A%09%7D%0A\n@@ -738,135 +738,15 @@\n  %7B%0A%09\n-r := make(%5B%5Dint, len(vet))%0A%09for i := 0; i %3C len(vet); i++%7B%0A%09%09if vet%5Bi%5D == 0 %7B%0A%09%09%09r%5Bi%5D = 0%0A%09%09%7D else %7B%0A%09%09%09r%5Bi%5D = vet%5Bi%5D +1%0A%09%09%7D%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -742,33 +742,35 @@\n _ = vet%0A%09return \n-r\n+nil\n %0A%7D%0A%0Afunc alone(v\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-06-28_16-06-48",
+            "content": "@@ -789,33 +789,32 @@\n  %3C len(vet); i++\n- \n %7B%0A%09%09if vet%5Bi%5D %3E \n@@ -815,475 +815,116 @@\n %5Bi%5D \n-%3E 0%7B%0A%09%09%09vizM := false%0A%0A%09%09%09if i %3E 0 && vet%5Bi - 1%5D %3E 0%7B%0A%09%09%09%09vizM = true%0A%09%09%09%7D%0A%09%09%09if i %3C len(vet) - 1 && vet%5Bi + 1%5D %3E 0%7B%0A%09%09%09%09vizM = true%0A%09%09%09%7D%0A%09%09%09if vizM %7B%0A%09%09%09%09r%5Bi%5D = 1%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return r%0A%7D%0A%0Afunc alone(vet %5B%5Dint) %5B%5Dint %7B%0A%09r := make(%5B%5Dint, len(vet))%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09if vet%5Bi%5D %3E 0%7B%0A%09%09%09vizM := false%0A%09%09%09if i %3E 0 && vet%5Bi - 1%5D %3E 0%7B%0A%09%09%09%09vizM = true%0A%09%09%09%7D%0A%09%09%09if i %3C len(vet) - 1 && vet%5Bi + 1%5D %3E 0%7B%0A%09%09%09%09vizM = true%0A%09%09%09%7D%0A%09%09%09if !vizM %7B%0A%09%09%09%09r%5Bi%5D = 1%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+== 0 %7B%0A%09%09%09r%5Bi%5D = 0%0A%09%09%7D else %7B%0A%09%09%09r%5Bi%5D = vet%5Bi%5D +1%0A%09%09%7D%0A%09%7D%0A%09return r%0A%7D%0A%0Afunc alone(vet %5B%5Dint) %5B%5Dint %7B%0A%09_ = vet\n %0A%09re\n@@ -920,33 +920,35 @@\n _ = vet%0A%09return \n-r\n+nil\n %0A%7D%0A%0Afunc couple(\n@@ -969,272 +969,15 @@\n  %7B%0A%09\n-m := make(map %5Bint%5Dint)%0A%09h := make(map %5Bint%5Dint)%0A%0A%09for _, x := range vet%7B%0A%09%09if x %3E 0%7B%0A%09%09%09h%5Bx%5D++%0A%09%09%7D else if x %3C 0%7B%0A%09%09%09m%5B-x%5D++%0A%09%09%7D%0A%09%7D%0A%0A%09casais := 0%0A%09for s, hCont := range h%7B%0A%09%09mCont := m%5Bs%5D%0A%09%09if hCont %3E mCont%7B%0A%09%09%09casais += hCont%0A%09%09%7D else %7B%0A%09%09%09casais += mCont%0A%09%09%7D%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -985,14 +985,9 @@\n urn \n-casais\n+0\n %0A%7D%0A%0A\n",
+            "lines": "173"
+        },
+        {
+            "label": "2026-06-28_16-23-49",
+            "content": "@@ -1664,691 +1664,265 @@\n  %7B%0A%09\n-if pos+len(seq) %3E len(vet)%7B%0A%09%09return false%0A%09%7D%0A%09for i := 0; i %3C len(seq); i++%7B%0A%09%09if vet%5Bpos+i%5D != seq%5Bi%5D%7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09return true%0A%7D%0A%0Afunc subseq(vet %5B%5Dint, seq %5B%5Dint) int %7B%0A%09if len(seq) == 0%7B%0A%09%09return 0%0A%09%7D%0A%09for i:= 0; i %3C= len(vet) - len(seq); i++%7B%0A%09%09if hasSubseq(vet, seq, i)%7B%0A%09%09%09return i%0A%09%09%7D%0A%09%7D%0A%09return -1%0A%7D%0A%0Afunc erase(vet %5B%5Dint, posList %5B%5Dint) %5B%5Dint %7B%0A%09remover := make(map%5Bint%5Dbool)%0A%09for _, pos := range posList%7B%0A%09%09remover %5Bpos%5D = true%0A%09%7D%0A%0A%09var r %5B%5Dint%0A%09for i, val := range vet %7B%0A%09%09if !remover%5Bi%5D%7B%0A%09%09%09r = append(r, val)%0A%09%09%7D%0A%09%7D%0A%09return r%0A%7D%0A%0Afunc clear(vet %5B%5Dint, value int) %5B%5Dint %7B%0A%09var r %5B%5Dint%0A%09for _, val := range vet %7B%0A%09%09if val != value%7B%0A%09%09%09r = append(r, val)%0A%09%09%7D%0A%09%7D\n+_ = vet%0A%09_ = seq%0A%09_ = pos%0A%09return false%0A%7D%0A%0Afunc subseq(vet %5B%5Dint, seq %5B%5Dint) int %7B%0A%09_ = vet%0A%09_ = seq%0A%09return -1%0A%7D%0A%0Afunc erase(vet %5B%5Dint, posList %5B%5Dint) %5B%5Dint %7B%0A%09_ = vet%0A%09_ = posList%0A%09return nil%0A%7D%0A%0Afunc clear(vet %5B%5Dint, value int) %5B%5Dint %7B%0A%09_ = vet%0A%09_ = value\n %0A%09re\n@@ -1918,33 +1918,35 @@\n = value%0A%09return \n-r\n+nil\n %0A%7D%0A%0Afunc main() \n",
+            "lines": "214"
+        },
+        {
+            "label": "2026-06-28_16-35-40",
+            "content": "@@ -115,68 +115,8 @@\n %0A%7D%0A%0A\n-func aux(n int) int%7B%0A%09if n %3C 0%7B%0A%09%09return -n%0A%09%7D%0A%09return n%0A%7D%0A%0A\n func\n",
+            "lines": "238"
+        },
+        {
+            "label": "2026-06-28_16-37-47",
+            "content": "@@ -301,14 +301,9 @@\n ont%5B\n-aux(v)\n+v\n %5D++%0A\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-39-01",
+            "content": "@@ -395,17 +395,16 @@\n s(keys)%0A\n-%0A\n %09var r %5B\n@@ -460,20 +460,10 @@\n air%7B\n-One: k, Two:\n+k,\n  con\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-41-27",
+            "content": "@@ -395,17 +395,16 @@\n s(keys)%0A\n-%09\n %0A%09var r \n@@ -461,10 +461,20 @@\n air%7B\n-k,\n+One: k, Two:\n  con\n",
+            "lines": "246"
+        },
+        {
+            "label": "2026-06-28_16-42-34",
+            "content": "@@ -585,19 +585,14 @@\n  := \n-aux(\n vet%5B0%5D\n-)\n %0A%09co\n@@ -643,19 +643,14 @@\n  := \n-aux(\n vet%5Bi%5D\n-)\n %0A%09%09i\n@@ -766,44 +766,8 @@\n %0A%09%7D%0A\n-%09r = append(r, Pair%7BcurrentS, cont%7D)\n %0A%09re\n",
+            "lines": "246"
+        },
+        {
+            "label": "2026-06-28_16-44-32",
+            "content": "@@ -939,32 +939,33 @@\n %09%09vizM := false%0A\n+%0A\n %09%09%09if i %3E 0 && v\n@@ -1037,17 +1037,17 @@\n %5Bi + 1%5D \n-%3C\n+%3E\n  0%7B%0A%09%09%09%09\n",
+            "lines": "246"
+        },
+        {
+            "label": "2026-06-28_16-46-04",
+            "content": "@@ -1319,33 +1319,33 @@\n 1 && vet%5Bi + 1%5D \n-%3C\n+%3E\n  0%7B%0A%09%09%09%09vizM = t\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-46-16",
+            "content": "@@ -1260,25 +1260,25 @@\n  vet%5Bi - 1%5D \n-%3C\n+%3E\n  0%7B%0A%09%09%09%09vizM\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-47-59",
+            "content": "@@ -1435,17 +1435,17 @@\n  int %7B%0A%09\n-h\n+m\n  := make\n@@ -1460,17 +1460,17 @@\n t%5Dint)%0A%09\n-m\n+h\n  := make\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-48-49",
+            "content": "@@ -1635,17 +1635,17 @@\n f hCont \n-%3C\n+%3E\n  mCont%7B%0A\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-49-58",
+            "content": "@@ -2209,16 +2209,17 @@\n %09remover\n+ \n %5Bpos%5D = \n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-54-47",
+            "content": "@@ -965,33 +965,33 @@\n 0 && vet%5Bi - 1%5D \n-%3C\n+%3E\n  0%7B%0A%09%09%09%09vizM = t\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-06-28_16-56-38",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"sort\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pair struct {\n\tOne int\n\tTwo int\n}\n\nfunc aux(n int) int{\n\tif n < 0{\n\t\treturn -n\n\t}\n\treturn n\n}\n\nfunc occurr(vet []int) []Pair {\n\tif len(vet) == 0{\n\t\treturn nil\n\t}\n\tcont := make(map[int]int)\n\tfor _, v := range vet {\n\t\tcont[aux(v)]++\n\t}\n\n\tvar keys []int\n\tfor k := range cont {\n\t\tkeys = append(keys, k)\n\t}\n\tsort.Ints(keys)\n\t\n\tvar r []Pair\n\tfor _, k := range keys {\n\t\tr = append(r, Pair{k, cont[k]})\n\t}\n\treturn r\n}\n\nfunc teams(vet []int) []Pair {\n\tif len(vet) == 0{\n\t\treturn nil\n\t}\n\n\tvar r []Pair\n\tcurrentS := aux(vet[0])\n\tcont := 1\n\tfor i := 1; i < len(vet); i++ {\n\t\ts := aux(vet[i])\n\t\tif s == currentS {\n\t\t\tcont++\n\t\t} else {\n\t\t\tr = append(r, Pair{currentS, cont})\n\t\t\tcurrentS = s\n\t\t\tcont = 1\n\t\t}\n\t}\n\tr = append(r, Pair{currentS, cont})\n\treturn r\n}\n\nfunc mnext(vet []int) []int {\n\tr := make([]int, len(vet))\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0{\n\t\t\tvizM := false\n\t\t\tif i > 0 && vet[i - 1] < 0{\n\t\t\t\tvizM = true\n\t\t\t}\n\t\t\tif i < len(vet) - 1 && vet[i + 1] < 0{\n\t\t\t\tvizM = true\n\t\t\t}\n\t\t\tif vizM {\n\t\t\t\tr[i] = 1\n\t\t\t}\n\t\t}\n\t}\n\treturn r\n}\n\nfunc alone(vet []int) []int {\n\tr := make([]int, len(vet))\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0{\n\t\t\tvizM := false\n\t\t\tif i > 0 && vet[i - 1] < 0{\n\t\t\t\tvizM = true\n\t\t\t}\n\t\t\tif i < len(vet) - 1 && vet[i + 1] < 0{\n\t\t\t\tvizM = true\n\t\t\t}\n\t\t\tif !vizM {\n\t\t\t\tr[i] = 1\n\t\t\t}\n\t\t}\n\t}\n\treturn r\n}\n\nfunc couple(vet []int) int {\n\th := make(map [int]int)\n\tm := make(map [int]int)\n\n\tfor _, x := range vet{\n\t\tif x > 0{\n\t\t\th[x]++\n\t\t} else if x < 0{\n\t\t\tm[-x]++\n\t\t}\n\t}\n\n\tcasais := 0\n\tfor s, hCont := range h{\n\t\tmCont := m[s]\n\t\tif hCont < mCont{\n\t\t\tcasais += hCont\n\t\t} else {\n\t\t\tcasais += mCont\n\t\t}\n\t}\n\treturn casais\n}\n\nfunc hasSubseq(vet []int, seq []int, pos int) bool {\n\tif pos+len(seq) > len(vet){\n\t\treturn false\n\t}\n\tfor i := 0; i < len(seq); i++{\n\t\tif vet[pos+i] != seq[i]{\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\n\nfunc subseq(vet []int, seq []int) int {\n\tif len(seq) == 0{\n\t\treturn 0\n\t}\n\tfor i:= 0; i <= len(vet) - len(seq); i++{\n\t\tif hasSubseq(vet, seq, i){\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}\n\nfunc erase(vet []int, posList []int) []int {\n\tremover := make(map[int]bool)\n\tfor _, pos := range posList{\n\t\tremover[pos] = true\n\t}\n\n\tvar r []int\n\tfor i, val := range vet {\n\t\tif !remover[i]{\n\t\t\tr = append(r, val)\n\t\t}\n\t}\n\treturn r\n}\n\nfunc clear(vet []int, value int) []int {\n\tvar r []int\n\tfor _, val := range vet {\n\t\tif val != value{\n\t\t\tr = append(r, val)\n\t\t}\n\t}\n\treturn r\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"occurr\":\n\t\t\tprintSlice(occurr(str2vet(args[1])))\n\t\tcase \"teams\":\n\t\t\tprintSlice(teams(str2vet(args[1])))\n\t\tcase \"mnext\":\n\t\t\tprintSlice(mnext(str2vet(args[1])))\n\t\tcase \"alone\":\n\t\t\tprintSlice(alone(str2vet(args[1])))\n\t\tcase \"erase\":\n\t\t\tprintSlice(erase(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"clear\":\n\t\t\tval, _ := strconv.Atoi(args[2])\n\t\t\tprintSlice(clear(str2vet(args[1]), val))\n\t\tcase \"subseq\":\n\t\t\tfmt.Println(subseq(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"couple\":\n\t\t\tfmt.Println(couple(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"Invalid command\")\n\t\t}\n\t}\n}\n\n// Fun\u00e7\u00f5es auxiliares\n\nfunc str2vet(str string) []int {\n\tif str == \"[]\" {\n\t\treturn nil\n\t}\n\tstr = str[1 : len(str)-1]\n\tparts := strings.Split(str, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tnum, _ := strconv.Atoi(strings.TrimSpace(part))\n\t\tvet = append(vet, num)\n\t}\n\treturn vet\n}\n\nfunc printSlice[T any](vet []T) {\n\tfmt.Print(\"[\")\n\tfor i, x := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(x)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc (p Pair) String() string {\n\treturn fmt.Sprintf(\"(%v, %v)\", p.One, p.Two)\n}\n",
+            "lines": "245"
+        }
+    ]
+}
