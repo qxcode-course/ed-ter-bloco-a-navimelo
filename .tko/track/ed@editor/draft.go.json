@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-30_05-11-12",
+            "content": "package main\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\nfunc main(){\n    scanner := bufio.NewScanner(os.Stdin)\n\n    if scanner.Scan(){\n        leitor := scanner.Text(){\n            var esq []rune\n            var dir []rune\n\n            for _, char := range leitor{\n                if(char >= 'a' && char <= 'z') || char == '-'{\n                    esq = append(esq, char)\n                } else {\n                    switch char{\n                    case 'R':\n                    case 'B':\n                    case 'D':\n                    case '>':\n                    case '<':\n                    }\n                }\n            }\n        }\n    }\n}\n",
+            "lines": "31"
+        }
+    ]
+}
