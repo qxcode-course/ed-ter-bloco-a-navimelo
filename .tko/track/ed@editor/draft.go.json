@@ -2,8 +2,48 @@
     "patches": [
         {
             "label": "2026-06-30_05-11-12",
-            "content": "package main\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\nfunc main(){\n    scanner := bufio.NewScanner(os.Stdin)\n\n    if scanner.Scan(){\n        leitor := scanner.Text(){\n            var esq []rune\n            var dir []rune\n\n            for _, char := range leitor{\n                if(char >= 'a' && char <= 'z') || char == '-'{\n                    esq = append(esq, char)\n                } else {\n                    switch char{\n                    case 'R':\n                    case 'B':\n                    case 'D':\n                    case '>':\n                    case '<':\n                    }\n                }\n            }\n        }\n    }\n}\n",
+            "content": "@@ -477,337 +477,47 @@\n     \n-    esq = append(esq, '%5Cn')%0A                    case 'B':%0A                        if len(esq) %3E 0 %7B%0A                            esq = esq%5B:len(esq) - 1%5D%0A                        %7D%0A                    case 'D':%0A                        if len(dir) %3E 0 %7B%0A                            dir = dir%5B:len(dir) - 1%5D%0A                        %7D\n+case 'B':%0A                    case 'D':\n %0A   \n",
             "lines": "31"
+        },
+        {
+            "label": "2026-06-30_05-15-32",
+            "content": "@@ -160,16 +160,17 @@\n r.Text()\n+%7B\n %0A       \n@@ -857,475 +857,17 @@\n     \n-    if len(dir) %3E 0%7B%0A                            ultdir := dir%5Blen(dir) - 1%5D%0A                            esq = append(esq, ultdir)%0A                            dir = dir%5B: len(dir) - 1%5D%0A                        %7D%0A                    case '%3C':%0A                        if len(esq) %3E 0%7B%0A                            ultesq := esq%5Blen(esq) - 1%5D%0A                            dir = append(dir, ultesq)%0A                            esq = esq%5B: len(esq)%5D%0A                        %7D\n+case '%3C':\n %0A   \n@@ -929,19 +929,14 @@\n     \n+%7D\n %0A    %7D\n-%0A%0A    \n %0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-07-01_02-05-34",
+            "content": "@@ -1284,36 +1284,32 @@\n = esq%5B: len(esq)\n- - 1\n %5D%0A              \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-01_02-05-42",
+            "content": "@@ -35,10 +35,8 @@\n     \n-//\n %22fmt\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-01_02-06-06",
+            "content": "@@ -31,16 +31,18 @@\n io%22%0A    \n+//\n %22fmt%22%0A  \n@@ -1380,25 +1380,24 @@\n       %7D%0A\n-%0A\n         \n     resu\n@@ -1392,87 +1392,15 @@\n     \n-    resul := string(esq) + string(dir)%0A            fmt.Println()%0A        \n %0A    %7D\n+%0A\n %0A   \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-01_02-08-05",
+            "content": "@@ -1450,21 +1450,16 @@\n Println(\n-resul\n )%0A      \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-01_02-08-15",
+            "content": "@@ -1418,11 +1418,19 @@\n ) + \n-%22%7C%22\n+string(dir)\n %0A   \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-01_02-09-07",
+            "content": "@@ -1422,110 +1422,8 @@\n %22%7C%22%0A\n-            for i := len(dir) - 1; i %3E= 0; i--%7B%0A                resul += string(dir%5Bi%5D)%0A            %7D%0A\n     \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-01_02-10-40",
+            "content": "package main\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\nfunc main(){\n    scanner := bufio.NewScanner(os.Stdin)\n\n    if scanner.Scan(){\n        leitor := scanner.Text()\n            var esq []rune\n            var dir []rune\n\n            for _, char := range leitor{\n                if(char >= 'a' && char <= 'z') || char == '-'{\n                    esq = append(esq, char)\n                } else {\n                    switch char{\n                    case 'R':\n                        esq = append(esq, '\\n')\n                    case 'B':\n                        if len(esq) > 0 {\n                            esq = esq[:len(esq) - 1]\n                        }\n                    case 'D':\n                        if len(dir) > 0 {\n                            dir = dir[:len(dir) - 1]\n                        }\n                    case '>':\n                        if len(dir) > 0{\n                            ultdir := dir[len(dir) - 1]\n                            esq = append(esq, ultdir)\n                            dir = dir[: len(dir) - 1]\n                        }\n                    case '<':\n                        if len(esq) > 0{\n                            ultesq := esq[len(esq) - 1]\n                            dir = append(dir, ultesq)\n                            esq = esq[: len(esq) - 1]\n                        }\n                    }\n                }\n            }\n\n            resul := string(esq) + \"|\"\n            for i := len(dir) - 1; i >= 0; i--{\n                resul += string(dir[i])\n            }\n            fmt.Println(resul)\n        \n    }\n    \n}\n",
+            "lines": "55"
         }
     ]
 }

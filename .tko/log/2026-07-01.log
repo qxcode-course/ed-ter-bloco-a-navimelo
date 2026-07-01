@@ -1,0 +1,26 @@
+2026-07-01 02:00:48, MOVE, v:1, k:ed@editor, mode:PICK
+2026-07-01 02:04:58, MOVE, v:1, k:ed@editor, mode:EDIT
+2026-07-01 02:05:34, EXEC, v:1, k:ed@editor, mode:FULL, size:50, fail:COMP
+2026-07-01 02:05:42, EXEC, v:1, k:ed@editor, mode:FULL, size:50, fail:COMP
+2026-07-01 02:06:06, EXEC, v:1, k:ed@editor, mode:FULL, rate:0, size:50
+2026-07-01 02:08:05, EXEC, v:1, k:ed@editor, mode:FULL, size:52, fail:COMP
+2026-07-01 02:08:15, EXEC, v:1, k:ed@editor, mode:FULL, rate:0, size:52
+2026-07-01 02:09:07, EXEC, v:1, k:ed@editor, mode:FULL, rate:66, size:52
+2026-07-01 02:09:57, MOVE, v:1, k:ed@editor, mode:EDIT
+2026-07-01 02:09:07, MOVE, v:1, k:ed@editor, mode:EDIT
+2026-07-01 02:10:40, EXEC, v:1, k:ed@editor, mode:FULL, rate:100, size:55
+2026-07-01 02:10:53, MOVE, v:1, k:ed@editor, mode:BACK
+2026-07-01 02:11:18, SELF, v:1, k:ed@editor, self:1, rate:100, study:27, concept:1
+2026-07-01 02:11:34, MOVE, v:1, k:ed@controlz, mode:DOWN
+2026-07-01 02:11:33, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:07:31, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-07-01 03:10:44, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:15:21, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-07-01 03:16:43, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-07-01 03:16:40, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:21:01, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:26:48, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:31:49, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:36:49, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-07-01 03:40:21, EXEC, v:1, k:ed@controlz, mode:FULL, size:77, fail:COMP
+2026-07-01 03:40:24, MOVE, v:1, k:ed@controlz, mode:BACK
