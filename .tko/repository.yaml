@@ -32,5 +32,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@linear
-selected_index: 59
+selected: ed@controlz
+selected_index: 58
