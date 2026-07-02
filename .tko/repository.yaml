@@ -13,12 +13,11 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@dfs
-- ed@list
-- ed@linear
-- ed@backtrack
-- ed@bfs
 - ed@tree
+- ed@linear
+- ed@bfs
+- ed@dfs
+- ed@backtrack
 flags:
   inbox: all
   panel: graph
@@ -28,5 +27,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@editorint
-selected_index: 8
+selected: ed@linear
+selected_index: 5

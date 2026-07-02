@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_05-50-40",
+            "content": "@@ -41,17 +41,17 @@\n     var \n-n\n+x\n  int%0A   \n@@ -74,17 +74,17 @@\n t.Scan(&\n-n\n+x\n ); err !\n@@ -114,311 +114,7 @@\n    %7D\n-%0A%0A    total := 0%0A    tanque := 0%0A    comeco := 0%0A    for i := 0; i %3C n; i++%7B%0A        var x, y int%0A        fmt.Scan(&x, &y)%0A%0A        saldo := x - y%0A        total += saldo%0A        tanque += saldo%0A%0A        if tanque %3C 0%7B%0A            comeco = i%0A            tanque = 0%0A        %7D%0A    %7D%0A%0A    fmt.Println(comeco)\n %0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-07-02_05-54-52",
+            "content": "@@ -129,9 +129,9 @@\n  := \n-1\n+0\n %0A   \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-07-02_05-55-31",
+            "content": "@@ -121,25 +121,25 @@\n    total := \n-0\n+1\n %0A    tanque \n@@ -203,27 +203,12 @@\n var \n-gasolina, distancia\n+x, y\n  int\n@@ -230,68 +230,38 @@\n an(&\n-gasolina, &distancia)%0A%0A        saldo := gasolina - distancia\n+x, &y)%0A%0A        saldo := x - y\n %0A   \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-07-02_05-57-33",
+            "content": "@@ -125,17 +125,17 @@\n otal := \n-1\n+0\n %0A    tan\n@@ -399,12 +399,8 @@\n  = i\n- + 1\n %0A   \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-07-02_05-57-54",
+            "content": "@@ -121,25 +121,25 @@\n    total := \n-0\n+1\n %0A    tanque \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-07-02_05-58-06",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    if _, err := fmt.Scan(&n); err != nil{\n        return\n    }\n\n    total := 0\n    tanque := 0\n    comeco := 0\n    for i := 0; i < n; i++{\n        var gasolina, distancia int\n        fmt.Scan(&gasolina, &distancia)\n\n        saldo := gasolina - distancia\n        total += saldo\n        tanque += saldo\n\n        if tanque < 0{\n            comeco = i + 1\n            tanque = 0\n        }\n    }\n\n    fmt.Println(comeco)\n}\n",
+            "lines": "27"
+        }
+    ]
+}

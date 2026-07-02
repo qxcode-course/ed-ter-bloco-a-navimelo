@@ -13,4 +13,4 @@ tko run *.go
 ```
 
 - Caso entre em loop infinito ou dê algum erro de execução, você pode interromper o programa com `Ctrl + C`.
-- Caso seu terminal fique estranho, você pode tentar restaurá-lo com o comando `reset` ou digitando `Ctrl + D` pra matar o terminal.
+- Caso seu terminal fique estranho, você pode tentar restaaurá-lo com o comando `reset` ou digitando `Ctrl + D` pra matar o terminal.

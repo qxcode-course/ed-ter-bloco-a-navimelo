@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_06-12-08",
+            "content": "@@ -287,16 +287,17 @@\n %0A%09%09fmt.S\n+s\n canf(lin\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-07-02_06-12-19",
+            "content": "@@ -326,187 +326,9 @@\n lY)%0A\n-%0A%09%09equipeX := q.Dequeue()%0A%09%09equipeY := q.Dequeue()%0A%0A%09%09if golX %3E golY%7B%0A%09%09%09q.Enqueue(equipeX)%0A%09%09%7D else %7B%0A%09%09%09q.Enqueue(equipeY)%0A%09%09%7D%0A%09%7D%0A%0A%09vencedor := q.Dequeue()%0A%09fmt.Println(vencedor)\n+%09%7D\n %0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-07-02_06-15-17",
+            "content": "@@ -287,20 +287,20 @@\n %0A%09%09fmt.S\n-s\n can\n+f\n (linha, \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_06-16-19",
+            "content": "@@ -229,26 +229,8 @@\n %3C 15\n- && scanner.Scan()\n ; i+\n@@ -291,12 +291,12 @@\n mt.S\n+s\n can\n-f\n (lin\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_06-17-47",
+            "content": "@@ -305,20 +305,20 @@\n %0A%09%09fmt.S\n-s\n can\n+f\n (linha, \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_06-18-27",
+            "content": "@@ -309,19 +309,28 @@\n mt.S\n+s\n can\n-f\n (linha,\n+ %22%25d %25d%22,\n  &go\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_06-18-53",
+            "content": "@@ -305,20 +305,20 @@\n %0A%09%09fmt.S\n-s\n can\n+f\n (linha, \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_06-19-05",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"bufio\"\n\t\"os\"\n)\n\nfunc main() {\n\tq := NewQueue[string]()\n\tequipes := \"ABCDEFGHIJKLMNOP\"\n\n\tfor _, e := range equipes{\n\t\tq.Enqueue(string(e))\n\t}\n\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor i := 0; i < 15 && scanner.Scan(); i++{\n\t\tlinha := scanner.Text()\n\n\t\tvar golX, golY int\n\t\tfmt.Sscan(linha, &golX, &golY)\n\n\t\tequipeX := q.Dequeue()\n\t\tequipeY := q.Dequeue()\n\n\t\tif golX > golY{\n\t\t\tq.Enqueue(equipeX)\n\t\t} else {\n\t\t\tq.Enqueue(equipeY)\n\t\t}\n\t}\n\n\tvencedor := q.Dequeue()\n\tfmt.Println(vencedor)\n}\n",
+            "lines": "36"
+        }
+    ]
+}

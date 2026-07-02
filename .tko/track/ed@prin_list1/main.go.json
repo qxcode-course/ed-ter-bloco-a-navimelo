@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_04-43-54",
+            "content": "@@ -24,18 +24,16 @@\n %09%22fmt%22%0A%09\n-//\n %22strings\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_04-44-10",
+            "content": "@@ -24,16 +24,18 @@\n %09%22fmt%22%0A%09\n+//\n %22strings\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_04-44-51",
+            "content": "@@ -145,249 +145,17 @@\n  %7B%0A%09\n-var sb strings.Builder%0A%09sb.WriteString(%22%5B%22)%0A%0A%09for n := l.root.next; n != l.root; n = n.next %7B%0A%09%09sb.WriteString(fmt.Sprint(n.Value))%0A%09%09if n == sword%7B%0A%09%09%09sb.WriteString(%22%3E%22)%0A%09%09%7D%0A%09%09sb.WriteString(%22 %22)%0A%09%7D%0A%09sb.WriteString(%22%5D%22)%0A%09return sb.String()\n+return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-07-02_04-52-07",
+            "content": "@@ -483,67 +483,8 @@\n %5D %7B%0A\n-%09next := it.next%0A%09if next == l.root%7B%0A%09%09next = next.next%0A%09%7D%0A\n %09ret\n@@ -488,19 +488,18 @@\n return n\n-ext\n+il\n %0A%7D%0A%0Afunc\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-07-02_04-53-20",
+            "content": "@@ -182,17 +182,16 @@\n tring(%22%5B\n- \n %22)%0A%0A%09for\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-02_04-54-30",
+            "content": "@@ -548,18 +548,19 @@\n return n\n-il\n+ext\n %0A%7D%0A%0Afunc\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-02_04-56-12",
+            "content": "@@ -41,1665 +41,8 @@\n %0A)%0A%0A\n-type DNode%5BT comparable%5D struct %7B%0A%09Value            T%0A%09next, prev, root *DNode%5BT%5D%0A%7D%0A%0Afunc (n *DNode%5BT%5D) Next() *DNode%5BT%5D %7B%0A%09if n == n.root %7B%0A%09%09return n%0A%09%7D%0A%09return n.next%0A%7D%0A%0Afunc (n *DNode%5BT%5D) Prev() *DNode%5BT%5D %7B%0A%09if n == n.root %7B%0A%09%09return n%0A%09%7D%0A%09return n.prev%0A%7D%0A%0Atype DList%5BT comparable%5D struct %7B%0A%09root *DNode%5BT%5D%0A%09size int%0A%7D%0A%0Afunc NewDList%5BT comparable%5D() *DList%5BT%5D %7B%0A%09root := &DNode%5BT%5D%7B%7D%0A%09root.next = root%0A%09root.prev = root%0A%09root.root = root%0A%09return &DList%5BT%5D%7Broot: root, size: 0%7D%0A%7D%0A%0Afunc (l *DList%5BT%5D) PushBack(value T) %7B%0A%09l.Insert(l.root, value)%0A%7D%0A%0Afunc (l *DList%5BT%5D) PopBack() %7B%0A%09if l.size == 0 %7B%0A%09%09return%0A%09%7D%0A%09l.Erase(l.root.prev)%0A%7D%0A%0Afunc (l *DList%5BT%5D) PopFront() %7B%0A%09if l.size == 0 %7B%0A%09%09return%0A%09%7D%0A%09l.Erase(l.root.next)%0A%7D%0A%0Afunc (l *DList%5BT%5D) PushFront(value T) %7B%0A%09l.Insert(l.root.next, value)%0A%7D%0A%0Afunc (l *DList%5BT%5D) Insert(it *DNode%5BT%5D, value T) *DNode%5BT%5D %7B%0A%09n := &DNode%5BT%5D%7BValue: value, root: l.root%7D%0A%09n.prev = it.prev%0A%09n.next = it%0A%09it.prev.next = n%0A%09it.prev = n%0A%09l.size++%0A%09return n%0A%7D%0A%0Afunc (l *DList%5BT%5D) Erase(it *DNode%5BT%5D) %7B%0A%09if it == l.root %7C%7C it == nil %7B%0A%09%09return%0A%09%7D%0A%09it.prev.next = it.next%0A%09it.next.prev = it.prev%0A%09l.size--%0A%7D%0A%0Afunc (l *DList%5BT%5D) String() string %7B%0A%09values := %5B%5Dstring%7B%7D%0A%09for n := l.root.next; n != l.root; n = n.next %7B%0A%09%09values = append(values, fmt.Sprint(n.Value))%0A%09%7D%0A%09return %22%5B%22 + strings.Join(values, %22, %22) + %22%5D%22%0A%7D%0A%0Afunc (l *DList%5BT%5D) Size() int %7B%0A%09return l.size%0A%7D%0A%0Afunc (l *DList%5BT%5D) Clear() %7B%0A%09l.root.next = l.root%0A%09l.root.prev = l.root%0A%09l.size = 0%0A%7D%0A%0Afunc (l *DList%5BT%5D) Front() *DNode%5BT%5D %7B%0A%09return l.root.next%0A%7D%0A%0Afunc (l *DList%5BT%5D) Back() *DNode%5BT%5D %7B%0A%09return l.root.prev%0A%7D%0A%0Afunc (l *DList%5BT%5D) End() *DNode%5BT%5D %7B%0A%09return l.root%0A%7D%0A%0A%0A\n // m\n@@ -548,19 +548,18 @@\n return n\n-ext\n+il\n %0A%7D%0A%0Afunc\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-02_04-57-26",
+            "content": "@@ -37,16 +37,1673 @@\n ngs%22%0A)%0A%0A\n+type DNode%5BT comparable%5D struct %7B%0A%09Value            T%0A%09next, prev, root *DNode%5BT%5D%0A%7D%0A%0Afunc (n *DNode%5BT%5D) Next() *DNode%5BT%5D %7B%0A%09if n == n.root %7B%0A%09%09return n%0A%09%7D%0A%09return n.next%0A%7D%0A%0Afunc (n *DNode%5BT%5D) Prev() *DNode%5BT%5D %7B%0A%09if n == n.root %7B%0A%09%09return n%0A%09%7D%0A%09return n.prev%0A%7D%0A%0Atype DList%5BT comparable%5D struct %7B%0A%09root *DNode%5BT%5D%0A%09size int%0A%7D%0A%0Afunc NewDList%5BT comparable%5D() *DList%5BT%5D %7B%0A%09root := &DNode%5BT%5D%7B%7D%0A%09root.next = root%0A%09root.prev = root%0A%09root.root = root%0A%09return &DList%5BT%5D%7Broot: root, size: 0%7D%0A%7D%0A%0Afunc (l *DList%5BT%5D) PushBack(value T) %7B%0A%09l.Insert(l.root, value)%0A%7D%0A%0Afunc (l *DList%5BT%5D) PopBack() %7B%0A%09if l.size == 0 %7B%0A%09%09return%0A%09%7D%0A%09l.Erase(l.root.prev)%0A%7D%0A%0Afunc (l *DList%5BT%5D) PopFront() %7B%0A%09if l.size == 0 %7B%0A%09%09return%0A%09%7D%0A%09l.Erase(l.root.next)%0A%7D%0A%0Afunc (l *DList%5BT%5D) PushFront(value T) %7B%0A%09l.Insert(l.root.next, value)%0A%7D%0A%0Afunc (l *DList%5BT%5D) Insert(it *DNode%5BT%5D, value T) *DNode%5BT%5D %7B%0A%09n := &DNode%5BT%5D%7BValue: value, root: l.root%7D%0A%09n.prev = it.prev%0A%09n.next = it%0A%09it.prev.next = n%0A%09it.prev = n%0A%09l.size++%0A%09return n%0A%7D%0A%0Afunc (l *DList%5BT%5D) Erase(it *DNode%5BT%5D) %7B%0A%09if it == l.root %7C%7C it == nil %7B%0A%09%09return%0A%09%7D%0A%09it.prev.next = it.next%0A%09it.next.prev = it.prev%0A%09l.size--%0A%7D%0A%0Afunc (l *DList%5BT%5D) String() string %7B%0A%09values := %5B%5Dstring%7B%7D%0A%09for n := l.root.next; n != l.root; n = n.next %7B%0A%09%09values = append(values, fmt.Sprint(n.Value))%0A%09%7D%0A%09return %22%5B%22 + strings.Join(values, %22, %22) + %22%5D%22%0A%7D%0A%0Afunc (l *DList%5BT%5D) Size() int %7B%0A%09return l.size%0A%7D%0A%0Afunc (l *DList%5BT%5D) Clear() %7B%0A%09l.root.next = l.root%0A%09l.root.prev = l.root%0A%09l.size = 0%0A%7D%0A%0Afunc (l *DList%5BT%5D) Front() *DNode%5BT%5D %7B%0A%09return l.root.next%0A%7D%0A%0Afunc (l *DList%5BT%5D) Back() *DNode%5BT%5D %7B%0A%09return l.root.prev%0A%7D%0A%0Afunc (l *DList%5BT%5D) End() *DNode%5BT%5D %7B%0A%09return l.root%0A%7D%0A%0A%0A\n // mostr\n@@ -2276,11 +2276,9 @@\n en)%0A\n+\n %09\n-//\n fmt.\n",
+            "lines": "155"
+        },
+        {
+            "label": "2026-07-02_04-59-07",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tvar sb strings.Builder\n\tsb.WriteString(\"[ \")\n\n\tfor n := l.root.next; n != l.root; n = n.next {\n\t\tsb.WriteString(fmt.Sprint(n.Value))\n\t\tif n == sword{\n\t\t\tsb.WriteString(\">\")\n\t\t}\n\t\tsb.WriteString(\" \")\n\t}\n\tsb.WriteString(\"]\")\n\treturn sb.String()\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tnext := it.next\n\tif next == l.root{\n\t\tnext = next.next\n\t}\n\treturn next\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\t//fmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "51"
+        }
+    ]
+}
