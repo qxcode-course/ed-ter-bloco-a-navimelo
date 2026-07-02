@@ -13,24 +13,20 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
 - ed@dfs
+- ed@list
 - ed@linear
 - ed@backtrack
-- ed@basic
-- ed@list
-- ed@rec
+- ed@bfs
 - ed@tree
-- ed@map_set
-- ed@vector
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@controlz
-selected_index: 58
+selected: ed@editorint
+selected_index: 8

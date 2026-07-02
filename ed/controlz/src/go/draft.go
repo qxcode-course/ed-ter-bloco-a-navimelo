@@ -28,6 +28,7 @@ func editor(comandos string) string {
 
                 esq = []rune (ult.esq)
                 dir = []rune (ult.dir)
+               }
             } else if c == 'Y' {
                 if len(histY) > 0{
                 atual := cursor{esq: string(esq), dir: string(dir)}
@@ -60,18 +61,35 @@ func editor(comandos string) string {
                     }
                 case '>':
                     if len(dir) > 0{
-
-                        
+                        ultdir := dir[len(dir) - 1]
+                        esq = append(esq, ultdir)
                         dir = dir[:len(dir) -1]
                     }
                 case '<':
+                    if len(esq) > 0{
+                        ultesq := esq[len(esq) - 1]
+                        dir = append(dir, ultesq)
+                        esq = esq[:len(esq) -1]
+                    }
                 }
             }
         }
     }
+
+    resul := string(esq) + "|"
+    for i := len(dir) - 1; i >= 0; i--{
+        resul += string(dir[i])
+    }
+
+    return resul
 }
 
-func main(){
+func main() {
     scanner := bufio.NewScanner(os.Stdin)
+    for scanner.Scan(){
+        comandos := scanner.Text()
+        resultado := editor(comandos)
+        fmt.Println(resultado)
+    }
 
 }
