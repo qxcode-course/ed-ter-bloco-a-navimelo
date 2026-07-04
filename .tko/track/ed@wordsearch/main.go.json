@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_05-08-34",
+            "content": "@@ -45,367 +45,8 @@\n %0A)%0A%0A\n-func busca(grid %5B%5D%5B%5Dbyte, l, c int, palavra string, idx int) bool%7B%0A%09if idx == len(palavra)%7B%0A%09%09return true%0A%09%7D%0A%09if l %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3C 0 %7C%7C c %3E= len(grid%5B0%5D) %7C%7C grid%5Bl%5D%5Bc%5D != palavra%5Bidx%5D%7B%0A%09%09return false%0A%09%7D%0A%09let := grid%5Bl%5D%5Bc%5D%0A%09dirl := %7B-1, 1, 0, 0%7D%0A%09dirc := %7B 0, 0, 1, -1%7D%0A%0A%09for i := 0; i %3C4; i++%7B%0A%09%09proxl := l + dirl%5Bi%5D%0A%09%09proxc := c + dirc%5Bi%5D%0A%09%7D%0A%7D%0A%0A\n // N\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-04_05-17-15",
+            "content": "@@ -280,27 +280,8 @@\n %5Bc%5D%0A\n-%09grid%5Bl%5D%5Bc%5D = ' '%0A%0A\n %09dir\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-04_05-18-13",
+            "content": "@@ -304,21 +304,16 @@\n dirl := \n-%5B%5Dint\n %7B-1, 1, \n@@ -331,13 +331,8 @@\n  := \n-%5B%5Dint\n %7B 0,\n@@ -417,94 +417,10 @@\n %5Bi%5D%0A\n-%0A%09%09if busca(grid, proxl, proxc, palavra, idx + 1)%7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%09return false\n+%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-07-04_05-20-33",
+            "content": "@@ -500,26 +500,8 @@\n %0A%09%7D%0A\n-%09grid%5Bl%5D%5Bc%5D = let%0A\n %09ret\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-04_05-21-04",
+            "content": "@@ -658,185 +658,25 @@\n  %7B%0A%09\n-if len(grid) == 0 %7C%7C len(word) == 0%7B%0A%09%09return false%0A%09%7D%0A%09for i := 0; i %3C len(grid); l++%7B%0A%09%09if grid%5Bl%5D%5Bc%5D == word%5B0%5D%7B%0A%09%09%09if busca(grid, l, c, word, 0)%7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+_, _ = grid, word\n %0A%09re\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-04_05-25-56",
+            "content": "@@ -718,17 +718,17 @@\n for \n-l\n+i\n  := 0; \n-l\n+i\n  %3C l\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-07-04_05-26-22",
+            "content": "@@ -746,46 +746,8 @@\n ++%7B%0A\n-%09%09for c := 0; c %3C len(grid%5B0%5D); l++%7B%0A%09\n %09%09if\n@@ -773,17 +773,16 @@\n %5B0%5D%7B%0A%09%09%09\n-%09\n if busca\n@@ -808,17 +808,16 @@\n 0)%7B%0A%09%09%09%09\n-%09\n return t\n@@ -824,14 +824,8 @@\n rue%0A\n-%09%09%09%09%7D%0A\n %09%09%09%7D\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-07-04_05-27-46",
+            "content": "@@ -774,17 +774,17 @@\n id%5B0%5D); \n-c\n+l\n ++%7B%0A%09%09%09i\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-04_05-29-00",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc busca(grid [][]byte, l, c int, palavra string, idx int) bool{\n\tif idx == len(palavra){\n\t\treturn true\n\t}\n\tif l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) || grid[l][c] != palavra[idx]{\n\t\treturn false\n\t}\n\tlet := grid[l][c]\n\tgrid[l][c] = ' '\n\n\tdirl := []int{-1, 1, 0, 0}\n\tdirc := []int{ 0, 0, 1, -1}\n\n\tfor i := 0; i <4; i++{\n\t\tproxl := l + dirl[i]\n\t\tproxc := c + dirc[i]\n\n\t\tif busca(grid, proxl, proxc, palavra, idx + 1){\n\t\t\treturn true\n\t\t}\n\t}\n\tgrid[l][c] = let\n\treturn false\n}\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tif len(grid) == 0 || len(word) == 0{\n\t\treturn false\n\t}\n\tfor l := 0; l < len(grid); l++{\n\t\tfor c := 0; c < len(grid[0]); c++{\n\t\t\tif grid[l][c] == word[0]{\n\t\t\t\tif busca(grid, l, c, word, 0){\n\t\t\t\t\treturn true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "65"
+        }
+    ]
+}
