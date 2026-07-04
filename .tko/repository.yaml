@@ -13,11 +13,9 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@tree
-- ed@linear
-- ed@bfs
 - ed@dfs
-- ed@backtrack
+- ed@bfs
+- ed@tree
 flags:
   inbox: all
   panel: graph
@@ -27,5 +25,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@polonesa
-selected_index: 14
+selected: ed@clonar
+selected_index: 11

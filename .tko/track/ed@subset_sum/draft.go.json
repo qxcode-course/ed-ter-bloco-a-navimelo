@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_02-31-02",
+            "content": "@@ -24,200 +24,8 @@\n t%22%0A%0A\n-func somaconj(ele %5B%5Dint, idx int, soma int, alvo int) bool%7B%0A    if soma == alvo%7B%0A        return true%0A    %7D%0A    if soma %3E alvo %7C%7C idx == len(ele)%7B%0A        return false%0A    %7D%0A    return false%0A%7D%0A\n %0Afun\n@@ -211,115 +211,7 @@\n    %7D\n-%0A%0A    if somaconj(ele, 0, 0, k)%7B%0A        fmt.Println(%22true%22)%0A    %7D else %7B%0A        fmt.Println(%22false%22)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-07-04_02-34-39",
+            "content": "@@ -197,84 +197,8 @@\n   %7D%0A\n-    if somaconj(ele, idx, soma + ele%5Bidx%5D, alvo)%7B%0A        return true%0A    %7D%0A\n     \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-04_02-36-01",
+            "content": "@@ -37,22 +37,16 @@\n conj(ele\n-mentos\n  %5B%5Dint, \n@@ -163,22 +163,16 @@\n  len(ele\n-mentos\n )%7B%0A     \n@@ -204,38 +204,32 @@\n  if somaconj(ele\n-mentos\n , idx, soma + el\n@@ -233,90 +233,13 @@\n  ele\n-mentos%5Bidx%5D, alvo)%7B%0A        return true%0A    %7D%0A    if somaconj(elementos, idx, soma\n+%5Bidx%5D\n , al\n@@ -397,22 +397,16 @@\n %0A    ele\n-mentos\n  := make\n@@ -465,22 +465,16 @@\n can(&ele\n-mentos\n %5Bi%5D)%0A   \n@@ -500,14 +500,8 @@\n (ele\n-mentos\n , 0,\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-07-04_02-37-55",
+            "content": "@@ -534,9 +534,9 @@\n  := \n-1\n+0\n ; i \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_02-38-30",
+            "content": "@@ -297,18 +297,16 @@\n   %7D%0A    \n-//\n if somac\n@@ -342,18 +342,16 @@\n o)%7B%0A    \n-//\n     retu\n@@ -366,10 +366,8 @@\n     \n-//\n %7D%0A  \n@@ -530,17 +530,17 @@\n or i := \n-0\n+1\n ; i %3C n;\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_02-38-50",
+            "content": "@@ -289,32 +289,34 @@\n  true%0A    %7D%0A    \n+//\n if somaconj(elem\n@@ -336,32 +336,34 @@\n oma, alvo)%7B%0A    \n+//\n     return true%0A\n@@ -362,24 +362,26 @@\n rn true%0A    \n+//\n %7D%0A    return\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_02-40-09",
+            "content": "@@ -327,12 +327,8 @@\n  idx\n- + 1\n , so\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_02-40-22",
+            "content": "@@ -231,28 +231,24 @@\n ementos, idx\n- + 1\n , soma + ele\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_02-40-32",
+            "content": "package main\nimport \"fmt\"\n\nfunc somaconj(elementos []int, idx int, soma int, alvo int) bool{\n    if soma == alvo{\n        return true\n    }\n    if soma > alvo || idx == len(elementos){\n        return false\n    }\n    if somaconj(elementos, idx + 1, soma + elementos[idx], alvo){\n        return true\n    }\n    if somaconj(elementos, idx + 1, soma, alvo){\n        return true\n    }\n    return false\n}\n\nfunc main() {\n    var n, k int\n\n    if _, err := fmt.Scan(&n, &k); err != nil{\n        return\n    }\n\n    elementos := make([]int, n)\n    for i := 0; i < n; i++{\n        fmt.Scan(&elementos[i])\n    }\n\n    if somaconj(elementos, 0, 0, k){\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n}\n",
+            "lines": "37"
+        }
+    ]
+}

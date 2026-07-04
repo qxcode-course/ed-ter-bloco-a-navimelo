@@ -223,3 +223,7 @@
 2026-07-02 06:29:48, EXEC, v:1, k:ed@clonar, mode:FULL, rate:100, size:83
 2026-07-02 06:29:50, MOVE, v:1, k:ed@clonar, mode:BACK
 2026-07-02 06:30:22, SELF, v:1, k:ed@clonar, self:1, rate:100, study:15, friend:cecilia barbosa
+2026-07-02 22:54:43, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-07-02 22:56:02, EXEC, v:1, k:ed@queimando, mode:FULL, size:81, fail:COMP
+2026-07-02 22:56:46, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-07-02 22:55:51, MOVE, v:1, k:ed@queimando, mode:EDIT

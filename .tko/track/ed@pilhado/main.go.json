@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-03_22-34-05",
+            "content": "@@ -668,318 +668,19 @@\n r !=\n- 'b'%7B%0A%09%09%09%09%09viz = append(viz, Pos%7Bproxl, proxc%7D)%0A%09\n+%0A%09%09%09%7D%0A\n %09%09\n-%09\n %7D%0A%09\n-%09%09%7D%0A%09%09%7D%0A%09%09if len(viz) %3E 0%7B%0A%09%09%09cam.Push(viz%5B0%5D)%0A%09%09%7D else%7B%0A%09%09%09grid%5Batual.l%5D%5Batual.c%5D = 'b'%0A%09%09%09beco.Push(atual)%0A%09%09%09cam.Pop()%0A%09%09%7D%0A%09%7D%0A%7D%0A%0Afunc main()%7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%0A%09if !scanner.Scan()%7B%0A%09%09return%0A%09%7D%0A%09var nl, nc int%0A%09fmt.Scan(&nl, &nc)%0A%0A%09\n+%7D\n %0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-07-03_22-51-34",
+            "content": "@@ -583,16 +583,19 @@\n oxc %3C nc\n+ &&\n %7B%0A%09%09%09%09ch\n@@ -974,11 +974,12 @@\n , &nc)%0A%0A\n+%09\n %0A%7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-03_22-52-02",
+            "content": "@@ -975,372 +975,7 @@\n c)%0A%0A\n-%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for i := 0; i %3C nl; i++%7B%0A%09%09if !scanner.Scan()%7B%0A%09%09break%0A%09%09%7D%0A%09%09grid = append(grid, %5B%5Drune(scanner.Text()))%0A%09%7D%0A%0A%09var comeco fim Pos%0A%0A%09for l := 0; l %3C nl; l++%7B%0A%09%09for c := 0; c %3C nc; c++%7B%0A%09%09%09if grid%5Bl%5D%5Bc%5D == 'I'%7B%0A%09%09%09%09comeco = Pos%7Bl, c%7D%0A%09%09%09%7D else if grid%5Bl%5D%5Bc%5D == 'F'%7B%0A%09%09%09%09fim = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09resolver(grid, nl, nc, comeco, fim)%0A\n %0A%7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-03_22-57-31",
+            "content": "@@ -1119,25 +1119,24 @@\n %0A%09var comeco\n-,\n  fim Pos%0A%0A%09f\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-03_22-57-55",
+            "content": "@@ -1341,62 +1341,7 @@\n im)%0A\n-%09for _, lin := range grid%7B%0A%09%09fmt.Printf(string(lin))%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-03_22-58-56",
+            "content": "@@ -848,75 +848,8 @@\n %7D%0A%09%7D\n-%0A%0A%09for !beco.IsEmpty()%7B%0A%09%09b := beco.Pop()%0A%09%09grid%5Bb.l%5D%5Bb.c%5D = ' '%0A%09%7D\n %0A%7D%0A%0A\n@@ -1379,10 +1379,9 @@\n rint\n-ln\n+f\n (str\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-03_23-02-03",
+            "content": "@@ -1027,26 +1027,12 @@\n mt.S\n-s\n can(\n-scanner.Text(\n &nl,\n@@ -1036,17 +1036,16 @@\n nl, &nc)\n-)\n %0A%0A%09grid \n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-07-03_23-08-02",
+            "content": "@@ -1041,17 +1041,16 @@\n er.Text(\n-)\n &nl, &nc\n@@ -1050,16 +1050,17 @@\n nl, &nc)\n+)\n %0A%0A%09grid \n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-07-03_23-08-25",
+            "content": "@@ -1042,18 +1042,16 @@\n r.Text()\n-, \n &nl, &nc\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-07-03_23-08-36",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct{\n\tl, c int\n}\n\nfunc resolver(grid [][]rune, nl, nc int, comeco, fim Pos){\n\tcam := NewStack[Pos]()\n\tbeco := NewStack[Pos]()\n\n\tcam.Push(comeco)\n\tfor !cam.IsEmpty(){\n\t\tatual := cam.Top()\n\n\t\tif atual.l == fim.l && atual.c == fim.c{\n\t\t\tgrid[atual.l][atual.c] = '.'\n\t\t\tbreak\n\t\t}\n\n\t\tgrid[atual.l][atual.c] = '.'\n\n\t\tdirl := []int{-1, 1, 0, 0}\n\t\tdirc := []int{0, 0, 1, -1}\n\n\t\tvar viz []Pos\n\n\t\tfor i := 0; i < 4; i++{\n\t\t\tproxl := atual.l + dirl[i]\n\t\t\tproxc := atual.c + dirc[i]\n\n\t\t\tif proxl >= 0 && proxl < nl && proxc >= 0 && proxc < nc{\n\t\t\t\tchar := grid[proxl][proxc]\n\n\t\t\t\tif char != '#' && char != '.' && char != 'b'{\n\t\t\t\t\tviz = append(viz, Pos{proxl, proxc})\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif len(viz) > 0{\n\t\t\tcam.Push(viz[0])\n\t\t} else{\n\t\t\tgrid[atual.l][atual.c] = 'b'\n\t\t\tbeco.Push(atual)\n\t\t\tcam.Pop()\n\t\t}\n\t}\n\n\tfor !beco.IsEmpty(){\n\t\tb := beco.Pop()\n\t\tgrid[b.l][b.c] = ' '\n\t}\n}\n\nfunc main(){\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan(){\n\t\treturn\n\t}\n\tvar nl, nc int\n\tfmt.Sscan(scanner.Text(), &nl, &nc)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor i := 0; i < nl; i++{\n\t\tif !scanner.Scan(){\n\t\tbreak\n\t\t}\n\t\tgrid = append(grid, []rune(scanner.Text()))\n\t}\n\n\tvar comeco, fim Pos\n\n\tfor l := 0; l < nl; l++{\n\t\tfor c := 0; c < nc; c++{\n\t\t\tif grid[l][c] == 'I'{\n\t\t\t\tcomeco = Pos{l, c}\n\t\t\t} else if grid[l][c] == 'F'{\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tresolver(grid, nl, nc, comeco, fim)\n\tfor _, lin := range grid{\n\t\tfmt.Println(string(lin))\n\t}\n}\n",
+            "lines": "93"
+        }
+    ]
+}

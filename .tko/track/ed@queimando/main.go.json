@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_22-56-02",
+            "content": "@@ -145,120 +145,29 @@\n ()%0A%09\n-%0A%09stack,Push(Pos%7Bl, c%7D)%0A%0A%09nl := len(grid)%0A%09if nl == 0%7B%0A%09%09return%0A%09%7D%0A%09nc := len(grid%5B0%5D)%0A%09if nc == 0%7B%0A%09%09return %0A%09%7D\n+_ , _ , _ = mat, l, c\n %0A%0A%09/\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-07-03_00-50-08",
+            "content": "@@ -148,17 +148,17 @@\n %09%0A%09stack\n-.\n+,\n Push(Pos\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-03_00-50-58",
+            "content": "@@ -233,212 +233,29 @@\n %5D)%0A%09\n-%0A%09for !stack.IsEmpty()%7B%0A%09%09atual := stack.Pop()%0A%0A%09%09if atual.l %3C 0 %7C%7C atual.l %3E= nl %7C%7C atual.c %3C 0 %7C%7C atual.c %3E= nc %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09if grid%5Batual.l%5D%5Batual.c%5D != 'A'%7B%0A%09%09%09grid%5Batual.l%5D%5Batual.c%5D = 'Q'%0A%09%09%7D\n+if nc == 0%7B%0A%09%09return \n %0A%09%7D%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-03_01-49-05",
+            "content": "@@ -433,173 +433,8 @@\n  'Q'\n-%0A%0A%09%09%09stack.Push(Pos%7Batual.l - 1, atual.c%7D)%0A%09%09%09stack.Push(Pos%7Batual.l - 1, atual.c%7D)%0A%09%09%09stack.Push(Pos%7Batual.l - 1, atual.c%7D)%0A%09%09%09stack.Push(Pos%7Batual.l - 1, atual.c%7D)\n %0A%09%09%7D\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-07-03_01-51-37",
+            "content": "@@ -502,9 +502,9 @@\n l.l \n-+\n+-\n  1, \n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-07-03_01-52-09",
+            "content": "@@ -530,32 +530,36 @@\n Push(Pos%7Batual.l\n+ - 1\n , atual.c - 1%7D)%0A\n@@ -551,20 +551,16 @@\n  atual.c\n- - 1\n %7D)%0A%09%09%09st\n@@ -579,16 +579,20 @@\n %7Batual.l\n+ - 1\n , atual.\n@@ -592,20 +592,16 @@\n  atual.c\n- + 1\n %7D)%0A%09%09%7D%0A%09\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-07-03_01-53-00",
+            "content": "@@ -1115,17 +1115,16 @@\n &cfire)%0A\n-%09\n %0A%09grid :\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-07-03_02-05-58",
+            "content": "@@ -140,16 +140,18 @@\n %5BPos%5D()%0A\n+%09%0A\n %09stack.P\n@@ -1115,16 +1115,17 @@\n &cfire)%0A\n+%09\n %0A%09grid :\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-07-03_02-12-06",
+            "content": "@@ -392,13 +392,13 @@\n .c%5D \n-== '#\n+!= 'A\n '%7B%0A%09\n@@ -427,12 +427,11 @@\n c%5D =\n-=\n  '\n-o\n+Q\n '%0A%0A%09\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-07-03_02-25-13",
+            "content": "@@ -423,16 +423,17 @@\n ual.c%5D =\n+=\n  'o'%0A%0A%09%09\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-07-03_02-26-50",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tstack := NewStack[Pos]()\n\tstack.Push(Pos{l, c})\n\n\tnl := len(grid)\n\tif nl == 0{\n\t\treturn\n\t}\n\tnc := len(grid[0])\n\t\n\tfor !stack.IsEmpty(){\n\t\tatual := stack.Pop()\n\n\t\tif atual.l < 0 || atual.l >= nl || atual.c < 0 || atual.c >= nc {\n\t\t\tcontinue\n\t\t}\n\n\t\tif grid[atual.l][atual.c] == '#'{\n\t\t\tgrid[atual.l][atual.c] = 'o'\n\n\t\t\tstack.Push(Pos{atual.l - 1, atual.c})\n\t\t\tstack.Push(Pos{atual.l + 1, atual.c})\n\t\t\tstack.Push(Pos{atual.l, atual.c - 1})\n\t\t\tstack.Push(Pos{atual.l, atual.c + 1})\n\t\t}\n\t}\n\n\t// Essa fun\u00e7\u00e3o deve usar uma list como pilha\n\t// e marcar as \u00e1rvores na matriz como queimados\n\t// Uma sugest\u00e3o de como fazer isso \u00e9:\n\t// - adicionar a primeira posi\u00e7\u00e3o na pilha\n\t// - enquanto a pilha n\u00e3o estiver vazia:\n\t//   - retirar o elemento do topo\n\t//   - se puder ser queimado, queime e adicione seus vizinhos \u00e0 pilha\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "71"
+        }
+    ]
+}

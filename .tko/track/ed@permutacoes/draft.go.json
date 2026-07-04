@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_01-31-48",
+            "content": "@@ -17,23 +17,14 @@\n ort \n-(%0A    \n %22fmt%22%0A\n-)%0A%0A\n func\n@@ -34,13 +34,42 @@\n in()\n+ \n %7B%0A    \n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-04_01-33-01",
+            "content": "@@ -37,493 +37,19 @@\n unc \n-permutar(s string)%7B%0A    let := %5B%5Drune(s)%0A    for i := 0; i %3C len(let); i++%7B%0A        for j := i + 1; j %3C len(let); j++%7B%0A            if let%5Bi%5D %3E let%5Bj%5D%7B%0A                let%5Bi%5D, let%5Bj%5D = let%5Bj%5D, let%5Bi%5D%0A            %7D%0A        %7D%0A    %7D%0A%0A    ant := make(%5B%5Dbool, len(let))%0A    var atual %5B%5Drune%0A%0A    var perm func()%7B%0A        perm = func()%7B%0A            if len(atual)%0A        %7D%0A    %7D%0A%7D%0A%0A%0Afunc main()%7B%0A    var s string%0A%0A    if _, err := fmt.Scan(&s); err != nil%7B%0A        return%0A    %7D%0A    permutar(s)\n+main()%7B%0A    \n %0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-07-04_01-43-42",
+            "content": "@@ -46,232 +46,373 @@\n tar(\n-a\n+s\n  string\n-, r string)%7B%0A    if len(r) == 0%7B%0A        fmt.Println(a)%0A        return \n+)%7B%0A    let := %5B%5Drune(s)%0A    for i := 0; i %3C len(let); i++%7B%0A        for j := i + 1; j %3C len(let); j++%7B%0A            if let%5Bi%5D %3E let%5Bj%5D%7B\n %0A    \n-%7D%0A%0A\n     \n-for i := 0; i %3C len(r); i++%7B\n+        let%5Bi%5D, let%5Bj%5D = let%5Bj%5D, let%5Bi%5D%0A            %7D%0A        %7D\n %0A    \n+%7D%0A%0A\n     \n-le\n+an\n t := \n-string(r%5Bi%5D)%0A        resto := r%5B:i%5D + r%5Bi + 1:%5D%0A        permutar(a + let, resto)\n+make(%5B%5Dbool, len(let))%0A    var atual %5B%5Drune%0A%0A    var perm func()%7B%0A        perm = func()%7B%0A            if len(atual)%0A        %7D\n %0A    %7D%0A\n-%0A\n %7D\n+%0A\n %0A%0Afu\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-07-04_01-47-15",
+            "content": "@@ -71,10 +71,8 @@\n     \n-/*\n if l\n@@ -83,16 +83,16 @@\n ) == 0%7B%0A\n+\n         \n@@ -131,10 +131,8 @@\n    %7D\n-*/\n %0A%0A  \n@@ -367,224 +367,8 @@\n   %7D%0A\n-%0A    lets := %5B%5Drune(s)%0A    for i := 0; i %3C len(lets); i++%7B%0A        for j := 0; j %3C len(lets); j++%7B%0A            if lets%5Bi%5D %3E lets%5Bj%5D%7B%0A                lets%5Bi%5D, lets%5Bj%5D = lets%5Bj%5D, lets%5Bi%5D%0A            %7D%0A        %7D%0A    %7D%0A%0A\n     \n@@ -381,14 +381,8 @@\n ar(s\n-, lets\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-07-04_01-50-29",
+            "content": "@@ -603,20 +603,12 @@\n (s, \n-string(\n lets)\n-)\n %0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_01-50-40",
+            "content": "@@ -600,10 +600,9 @@\n tar(\n-%22%22\n+s\n , st\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_01-50-56",
+            "content": "@@ -63,24 +63,26 @@\n tring)%7B%0A    \n+/*\n if len(r) ==\n@@ -125,24 +125,26 @@\n eturn %0A    %7D\n+*/\n %0A%0A    for i \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_01-51-13",
+            "content": "@@ -443,12 +443,9 @@\n  := \n-i +1\n+0\n ; j \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-04_01-51-33",
+            "content": "package main\nimport (\n    \"fmt\"\n)\n\nfunc permutar(a string, r string){\n    if len(r) == 0{\n        fmt.Println(a)\n        return \n    }\n\n    for i := 0; i < len(r); i++{\n        let := string(r[i])\n        resto := r[:i] + r[i + 1:]\n        permutar(a + let, resto)\n    }\n\n}\n\nfunc main(){\n    var s string\n\n    if _, err := fmt.Scan(&s); err != nil{\n        return\n    }\n\n    lets := []rune(s)\n    for i := 0; i < len(lets); i++{\n        for j := i +1; j < len(lets); j++{\n            if lets[i] > lets[j]{\n                lets[i], lets[j] = lets[j], lets[i]\n            }\n        }\n    }\n\n    permutar(\"\", string(lets))\n}\n",
+            "lines": "37"
+        }
+    ]
+}
