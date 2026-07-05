@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_04-07-54",
+            "content": "@@ -319,219 +319,8 @@\n %09%09%7D%0A\n-%09%09board%5Br%5D%5Bc%5D != 'V'%0A%09%09busca(r + 1, c)%0A%09%09busca(r - 1, c)%0A%09%09busca(r, c + 1)%0A%09%09busca(r, c - 1)%0A%09%7D%0A%09for i:= 0; i %3C m; i++%7B%0A%09%09busca(i, 0)%0A%09%09busca(i, n - 1)%0A%09%7D%0A%09for j:= 0; j %3C n; j++%7B%0A%09%09busca(0, j)%0A%09%09busca(m - 1, j)%0A\n %09%7D%0A%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-07-05_04-14-25",
+            "content": "@@ -533,118 +533,8 @@\n %0A%09%7D%0A\n-%09for i := 0; i %3C m; i++%7B%0A%09%09for j:= 0; j %3C n; j++%7B%0A%09%09%09if board%5Bi%5D%5Bj%5D == 'O'%7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'X'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %7D%0A//\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-05_04-27-21",
+            "content": "@@ -631,63 +631,8 @@\n 'X'%0A\n-%09%09%09%7D else if board%5Bi%5D%5Bj%5D == 'V'%7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'O'%0A\n %09%09%09%7D\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-07-05_04-27-26",
+            "content": "@@ -329,16 +329,17 @@\n d%5Br%5D%5Bc%5D \n+!\n = 'V'%0A%09%09\n@@ -627,16 +627,71 @@\n %5D = 'X'%0A\n+%09%09%09%7D else if board%5Bi%5D%5Bj%5D == 'V'%7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'O'%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-05_04-27-47",
+            "content": "@@ -630,63 +630,8 @@\n 'X'%0A\n-%09%09%09%7D else if board%5Bi%5D%5Bj%5D == 'V'%7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'O'%0A\n %09%09%09%7D\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-07-05_04-27-56",
+            "content": "@@ -246,19 +246,17 @@\n %09if r %3C \n-'O'\n+0\n  %7C%7C r %3E=\n@@ -265,19 +265,17 @@\n  %7C%7C c %3C \n-'O'\n+0\n  %7C%7C c %3E=\n@@ -296,17 +296,17 @@\n %5Bc%5D != '\n-O\n+0\n '%7B%0A%09%09%09re\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-05_04-29-58",
+            "content": "@@ -246,17 +246,19 @@\n %09if r %3C \n-0\n+'O'\n  %7C%7C r %3E=\n@@ -267,17 +267,19 @@\n  %7C%7C c %3C \n-0\n+'O'\n  %7C%7C c %3E=\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-05_04-30-16",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tm := len(board)\n\tn := len(board[0])\n\n\tif m == 0 || n == 0{\n\t\treturn\n\t}\n\tvar busca func(r, c int)\n\tbusca = func(r, c int) {\n\t\tif r < 0 || r >= m || c < 0 || c >= n || board[r][c] != 'O'{\n\t\t\treturn \n\t\t}\n\t\tboard[r][c] = 'V'\n\t\tbusca(r + 1, c)\n\t\tbusca(r - 1, c)\n\t\tbusca(r, c + 1)\n\t\tbusca(r, c - 1)\n\t}\n\tfor i:= 0; i < m; i++{\n\t\tbusca(i, 0)\n\t\tbusca(i, n - 1)\n\t}\n\tfor j:= 0; j < n; j++{\n\t\tbusca(0, j)\n\t\tbusca(m - 1, j)\n\t}\n\tfor i := 0; i < m; i++{\n\t\tfor j:= 0; j < n; j++{\n\t\t\tif board[i][j] == 'O'{\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t} else if board[i][j] == 'V'{\n\t\t\t\tboard[i][j] = 'O'\n\t\t\t}\n\t\t}\n\t}\n}\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "61"
+        }
+    ]
+}

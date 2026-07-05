@@ -12,16 +12,30 @@ func numIslands(grid [][]byte) int {
 	if len(grid) == 0{
 		return 0
 	}
+	total := 0
 
-	linhas, colunas := len(grid), len(grid[0])
-	ilhas := 0
-	bfs := func(l, c int) {
-		queue := [][2] int{{l, c}}
-		grid [l][c] = '0'
-
-		for len(queue) > 0 {
-			pos := queue[0]
+	var busca func(r, c int)
+	busca = func(r, c int){
+		if r < 0 || r >= len(grid) || c < 0 || c >= len(grid[0]) || grid[r][c] == '0'{
+			return
 		}
+		grid[r][c] = '0'
+
+		busca(r + 1, c)
+		busca(r - 1, c)
+		busca(r, c + 1)
+		busca(r, c - 1)
+	}
+	for i := 0; i < len(grid);  i++{
+		for j := 0; j < len(grid[0]);  j++{
+			if grid[i][j] == '1'{
+				total++
+				busca(i, j)
+			}
+		}
+	}
+
+	return total
 }
 
 // Não modifique a função main
