@@ -16,7 +16,7 @@ expanded:
 - ed@bfs
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
