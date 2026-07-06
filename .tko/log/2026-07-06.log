@@ -1,0 +1,33 @@
+2026-07-06 01:21:54, MOVE, v:1, k:ed@detonate, mode:DOWN
+2026-07-06 01:26:05, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-06 01:21:54, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:26:02, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:30:39, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:15
+2026-07-06 01:31:08, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:30:39, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:32:33, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-06 01:34:12, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-06 01:37:25, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:42:38, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:47:29, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 01:48:44, EXEC, v:1, k:ed@detonate, mode:FULL, size:54, fail:COMP
+2026-07-06 01:48:45, EXEC, v:1, k:ed@detonate, mode:FULL, fail:COMP
+2026-07-06 01:49:02, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:54
+2026-07-06 01:49:22, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:54
+2026-07-06 01:49:53, EXEC, v:1, k:ed@detonate, mode:FULL, rate:66, size:54
+2026-07-06 01:49:55, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-06 01:50:11, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-06 01:50:22, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100, size:54
+2026-07-06 01:50:24, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-06 01:50:44, SELF, v:1, k:ed@detonate, self:1, rate:100, study:28, concept:1
+2026-07-06 01:52:13, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-07-06 01:52:14, EXEC, v:1, k:ed@caminho, mode:FULL, size:111, fail:COMP
+2026-07-06 01:52:16, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-07-06 02:13:06, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-07-06 02:14:45, EXEC, v:1, k:ed@caminho, mode:FULL, size:111, fail:COMP
+2026-07-06 02:15:02, EXEC, v:1, k:ed@caminho, mode:FULL, size:112, fail:COMP
+2026-07-06 02:15:22, EXEC, v:1, k:ed@caminho, mode:FULL, size:112, fail:COMP
+2026-07-06 02:15:21, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-06 02:16:13, EXEC, v:1, k:ed@caminho, mode:FULL, size:111, fail:COMP
+2026-07-06 02:20:10, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-06 02:23:59, MOVE, v:1, k:ed@caminho, mode:BACK

@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_01-30-39",
+            "content": "@@ -32,811 +32,8 @@\n %0A)%0A%0A\n-func detona(bomba %5B%5D%5B%5Dint) int%7B%0A    n := len(bomba)%0A    maxbomba := 0%0A%0A    for i := 0; i %3C n; i++%7B%0A        vis := make(%5B%5Dbool, n)%0A        cont := dfs(i, bomba, vis)%0A%0A        if cont %3E maxbomba%7B%0A            maxbomba = cont%0A        %7D%0A    %7D%0A    return maxbomba%0A%7D%0Afunc dfs(atual int, bomba%5B%5D%5B%5Dint, vis %5B%5Dbool) int%7B%0A    vis%5Batual%5D := true%0A    cont := 1%0A%0A    a, b, r := bomba%5Batual%5D%5B1%5D, bomba%5Batual%5D%5B2%5D, bomba%5Batual%5D%5B3%5D%0A%0A    for prox := 0; prox %3C len(bomba); prox++%7B%0A        if vis%5Bprox%5D%7B%0A            continue%0A        %7D%0A        x, y := bomba%5Bprox%5D%5B1%5D, bomba%5Bprox%5D%5B2%5D%0A%0A        dx := int64(a - x)%0A        dy := int64(b - y)%0A        distancia := (dx * dx) + (dy * dy)%0A        raio := int64(r) * int64(r)%0A%0A        if distancia %3C= raio%7B%0A            cont += dfs(prox, bomba, vis)%0A        %7D%0A    %7D%0A    return cont%0A%7D%0A%0A\n func\n@@ -241,37 +241,6 @@\n   %7D%0A\n-    fmt.Println(detona(bomba))%0A\n %7D%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-07-06_01-48-44",
+            "content": "@@ -354,16 +354,17 @@\n %5Batual%5D \n+:\n = true%0A \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-06_01-49-02",
+            "content": "@@ -569,17 +569,17 @@\n a%5Bprox%5D%5B\n-0\n+1\n %5D, bomba\n@@ -585,17 +585,17 @@\n a%5Bprox%5D%5B\n-1\n+2\n %5D%0A%0A     \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-06_01-49-22",
+            "content": "@@ -394,25 +394,8 @@\n r :=\n- bomba%5Batual%5D%5B0%5D,\n  bom\n@@ -419,24 +419,41 @@\n ba%5Batual%5D%5B2%5D\n+, bomba%5Batual%5D%5B3%5D\n %0A%0A    for pr\n@@ -569,17 +569,17 @@\n a%5Bprox%5D%5B\n-1\n+0\n %5D, bomba\n@@ -585,17 +585,17 @@\n a%5Bprox%5D%5B\n-2\n+1\n %5D%0A%0A     \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-06_01-49-53",
+            "content": "@@ -569,17 +569,17 @@\n a%5Bprox%5D%5B\n-0\n+1\n %5D, bomba\n@@ -585,17 +585,17 @@\n a%5Bprox%5D%5B\n-1\n+2\n %5D%0A%0A     \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-07-06_01-50-22",
+            "content": "package main\nimport (\n    \"fmt\"\n)\n\nfunc detona(bomba [][]int) int{\n    n := len(bomba)\n    maxbomba := 0\n\n    for i := 0; i < n; i++{\n        vis := make([]bool, n)\n        cont := dfs(i, bomba, vis)\n\n        if cont > maxbomba{\n            maxbomba = cont\n        }\n    }\n    return maxbomba\n}\nfunc dfs(atual int, bomba[][]int, vis []bool) int{\n    vis[atual] = true\n    cont := 1\n\n    a, b, r := bomba[atual][0], bomba[atual][1], bomba[atual][2]\n\n    for prox := 0; prox < len(bomba); prox++{\n        if vis[prox]{\n            continue\n        }\n        x, y := bomba[prox][0], bomba[prox][1]\n\n        dx := int64(a - x)\n        dy := int64(b - y)\n        distancia := (dx * dx) + (dy * dy)\n        raio := int64(r) * int64(r)\n\n        if distancia <= raio{\n            cont += dfs(prox, bomba, vis)\n        }\n    }\n    return cont\n}\n\nfunc main(){\n    var n, c int\n    fmt.Scan(&n, &c)\n\n    bomba := make([][]int, n)\n    for i := 0; i < n; i++{\n        bomba[i] = make([]int, 3)\n        fmt.Scan(&bomba[i][0], &bomba[i][1], &bomba[i][2])\n    }\n    fmt.Println(detona(bomba))\n}\n",
+            "lines": "54"
+        }
+    ]
+}
